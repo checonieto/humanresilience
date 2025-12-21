@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resilience - Resources for Mental Wellness & Suicide Prevention</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c5fa5; /* Deep blue */
+            --secondary: #5a9bd5; /* Light blue */
+            --accent: #ff6b6b; /* Emergency red */
+            --gold: #ffc107; /* Gold color */
+            --light-gold: #fff3cd; /* Light gold */
+            --light: #f0f8ff; /* Light blue background */
+            --dark: #343a40;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Emergency Button Styles */
+        .emergency-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .emergency-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .emergency-btn:hover {
+            background-color: #ff5252;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.6);
+        }
+        
+        .emergency-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(255, 107, 107, 0.8); }
+            100% { box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); }
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 193, 7, 0.1) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: var(--light-gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section with Background Image */
+        .hero {
+            position: relative;
+            background: 
+                linear-gradient(rgba(44, 95, 165, 0.85), rgba(90, 155, 213, 0.85)),
+                url('hero-backgroundhr.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--gold);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin: 0 auto 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.8;
+        }
+        
+        .hero-btn {
+            background-color: var(--gold);
+            color: #333;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        .hero-btn:hover {
+            background-color: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+        }
+        
+        .hero-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 2px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--gold);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-content {
+            padding: 1.5rem;
+        }
+        
+        .category-title {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-title i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .category-desc {
+            color: var(--gray);
+            margin-bottom: 1.2rem;
+        }
+        
+        .category-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .category-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Featured Image Section */
+        .featured-images {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-card:hover .featured-img {
+            transform: scale(1.05);
+        }
+        
+        .image-caption {
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .image-caption h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Resources Section */
+        .resources {
+            padding: 3rem 0;
+            background-color: var(--light);
+        }
+        
+        .resource-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .resource-item {
+            background-color: white;
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .resource-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-item h3 i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .hotline-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .call-btn, .text-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .call-btn {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .call-btn:hover {
+            background-color: #1e4a8a;
+            transform: translateY(-2px);
+        }
+        
+        .text-btn {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .text-btn:hover {
+            background-color: #3a87c9;
+            transform: translateY(-2px);
+        }
+        
+        .call-btn i, .text-btn i {
+            margin-right: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+            border-top: 5px solid var(--gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #555;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+                min-height: 60vh;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .emergency-container {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .emergency-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .hotline-buttons {
+                flex-direction: column;
+            }
+            
+            .call-btn, .text-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Button -->
+    <div class="emergency-container">
+        <a href="tel:988" class="emergency-btn">
+            <i class="fas fa-phone-alt"></i> 988 Suicide & Crisis Lifeline
+        </a>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                Human Resilience
+            </div>
+            <p class="tagline">A comprehensive resource for mental wellness, suicide prevention, and building resilience to help individuals and communities thrive.</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo" style="font-size: 1.5rem; color: var(--primary);">
+                <i class="fas fa-heart" style="color: var(--gold);"></i> HR
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#categories"><i class="fas fa-list"></i> Resources</a></li>
+                <li><a href="#images"><i class="fas fa-images"></i> Images</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section with Background Image -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Building Resilience for Human Flourishing</h1>
+                <p>Find resources, support, and information to help navigate mental health challenges, build resilience, and prevent suicide. You are not alone.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="#categories" class="hero-btn">
+                        Explore Resources <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
+                        Get Immediate Help <i class="fas fa-hands-helping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Resources by Category</h2>
+            <div class="category-grid">
+                <!-- Mental Wellness -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-brain"></i> Mental Wellness</h3>
+                        <p class="category-desc">Strategies and resources for maintaining mental health, managing stress, and promoting emotional well-being.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Mindfulness & Meditation -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-spa"></i> Mindfulness & Meditation</h3>
+                        <p class="category-desc">Techniques and practices to cultivate mindfulness, reduce anxiety, and improve focus and emotional regulation.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Grief & Loss -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-hands-helping"></i> Grief & Loss</h3>
+                        <p class="category-desc">Support and guidance for navigating grief, loss, and bereavement with compassion and resilience.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Suicide Prevention -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-life-ring"></i> Suicide Prevention</h3>
+                        <p class="category-desc">Critical resources, warning signs, and intervention strategies to prevent suicide and support those at risk.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Resilience -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-mountain"></i> Resilience Building</h3>
+                        <p class="category-desc">Tools and techniques to develop psychological resilience, adapt to adversity, and thrive through challenges.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Addiction Recovery -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-hand-holding-heart"></i> Addiction Recovery</h3>
+                        <p class="category-desc">Resources and support systems for individuals and families navigating addiction and recovery journeys.</p>
+                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Images Section -->
+    <section class="featured-images" id="images">
+        <div class="container">
+            <h2 class="section-title">Visualizing Resilience & Hope</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="mindfulness.jpg" alt="Person practicing mindfulness meditation in a peaceful setting" class="featured-img">
+                    <div class="image-caption">
+                        <h3><i class="fas fa-spa" style="color: var(--gold);"></i> Mindfulness in Practice</h3>
+                        <p>Finding peace and presence through mindfulness techniques that build emotional resilience.</p>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="support-community.jpg" alt="Community support group meeting together" class="featured-img">
+                    <div class="image-caption">
+                        <h3><i class="fas fa-users" style="color: var(--gold);"></i> Community Support</h3>
+                        <p>Healing happens together. Support groups provide connection and understanding during difficult times.</p>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="hope-recovery.jpg" alt="Symbol of hope and recovery with sunrise imagery" class="featured-img">
+                    <div class="image-caption">
+                        <h3><i class="fas fa-sun" style="color: var(--gold);"></i> Pathway to Hope</h3>
+                        <p>Recovery and resilience are journeys that lead to renewed strength and purpose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section class="resources" id="about">
+        <div class="container">
+            <h2 class="section-title">Immediate Help & Hotlines</h2>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h3><i class="fas fa-phone-alt"></i> 988 Suicide & Crisis Lifeline</h3>
+                    <p>Call or text 988 for free, confidential support 24/7. The Lifeline provides crisis counseling and mental health referrals.</p>
+                    <div class="hotline-buttons">
+                        <a href="tel:988" class="call-btn"><i class="fas fa-phone"></i> Call 988</a>
+                        <a href="sms:988" class="text-btn"><i class="fas fa-comment"></i> Text 988</a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <h3><i class="fas fa-sms"></i> Crisis Text Line</h3>
+                    <p>Text HOME to 741741 to connect with a crisis counselor. Free, 24/7 support for any crisis.</p>
+                    <div class="hotline-buttons">
+                        <a href="sms:741741?body=HOME" class="text-btn"><i class="fas fa-comment"></i> Text HOME to 741741</a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <h3><i class="fas fa-rainbow"></i> The Trevor Project (LGBTQ+)</h3>
+                    <p>Call 1-866-488-7386 or text START to 678678. 24/7 crisis intervention and suicide prevention for LGBTQ+ youth.</p>
+                    <div class="hotline-buttons">
+                        <a href="tel:18664887386" class="call-btn"><i class="fas fa-phone"></i> Call 1-866-488-7386</a>
+                        <a href="sms:678678?body=START" class="text-btn"><i class="fas fa-comment"></i> Text START to 678678</a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <h3><i class="fas fa-flag-usa"></i> Veterans Crisis Line</h3>
+                    <p>Call 988 then press 1, or text 838255. Confidential support for veterans and their families.</p>
+                    <div class="hotline-buttons">
+                        <a href="tel:988" class="call-btn"><i class="fas fa-phone"></i> Call 988 (Press 1)</a>
+                        <a href="sms:838255" class="text-btn"><i class="fas fa-comment"></i> Text 838255</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Human Resilience</h3>
+                    <p>Providing evidence-based resources for mental wellness, suicide prevention, and resilience building to help individuals and communities thrive.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#home" class="hero-btn" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fas fa-arrow-up"></i> Back to Top
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#home"><i class="fas fa-home"></i> Home</a>
+                        <a href="#categories"><i class="fas fa-list"></i> Resource Categories</a>
+                        <a href="#images"><i class="fas fa-images"></i> Featured Images</a>
+                        <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact & Support</h3>
+                    <div class="footer-links">
+                        <a href="mailto:info@humanresilience.org"><i class="fas fa-envelope"></i> info@humanresilience.org</a>
+                        <a href="#contact"><i class="fas fa-comment"></i> Contact Form</a>
+                        <a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                        <a href="#disclaimer"><i class="fas fa-exclamation-circle"></i> Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Human Resilience. This site is for informational purposes only and is not a substitute for professional medical advice.</p>
+                <p>If you are in crisis, please call 988 or go to your nearest emergency room.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Hero background image loading simulation
+        window.addEventListener('load', function() {
+            const hero = document.querySelector('.hero');
+            hero.style.opacity = '0';
+            hero.style.transition = 'opacity 1s ease';
+            
+            setTimeout(() => {
+                hero.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
