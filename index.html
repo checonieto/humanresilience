@@ -1021,8 +1021,9 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
+            <!-- CHANGED: Updated from "RH" to "Human Resilience" -->
             <div class="logo" style="font-size: 1.5rem; color: var(--primary);">
-                <i class="fas fa-heartbeat" style="color: var(--secondary);"></i> HR
+                <i class="fas fa-heartbeat" style="color: var(--secondary);"></i> Human Resilience
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1520,25 +1521,25 @@
             books: {
                 title: "Helpful Books on Resilience, Grief & Healing",
                 books: [
-                    "The Light After Death - Vincent Todd Tolman",
-                    "Aftermath - Gary Roe",
-                    "What's On the Other Side - Top",
-                    "The Grief Recovery Handbook - John James and Russell Friedman",
-                    "Evidence of the Afterlife - Long, Perry",
-                    "The Gateway We Call Death - Nelson",
-                    "Suicide: What Really Happens in the Afterlife? - Klimo, Heath 2006",
-                    "The Light Between Us by Laura Lynne Jackson",
-                    "Option B - Sheryl Sandberg, Adam Grant",
-                    "Life After Suicide - Jennifer Ashton",
-                    "Grieving a Suicide - Albert Y. Hsu",
-                    "It's OK that You're Not OK - Megan Devine",
-                    "No Time to Say Goodbye - Carla Fine",
-                    "Suicide - Earl A. Grollman",
-                    "Understanding Suicide - Connie Goldsmith",
-                    "Notes on Grief - Chimamanda Ngozi Adichie",
-                    "Grief Is for People - Sloane Crosley",
-                    "Please Be Patient I'm Grieving - Gary Roe",
-                    "Forgiving What You Can't Forget - Lysa TerKeurst"
+                    // UPDATED: Books now include links and only include books with links provided
+                    {name: "The Light After Death - Vincent Todd Tolman", url: "https://thelightafterdeath.com/"},
+                    {name: "Aftermath - Gary Roe", url: "https://www.garyroe.com/aftermath/"},
+                    {name: "What's On the Other Side - Brent L. Top", url: "https://www.amazon.com/Whats-Other-Side-Gospel-Teaches/dp/1609070461"},
+                    {name: "The Grief Recovery Handbook - John James and Russell Friedman", url: "https://www.griefrecoverymethod.com/books/grief-recovery-handbook-src"},
+                    {name: "Evidence of the Afterlife - Long, Perry", url: "https://www.amazon.com/Evidence-Afterlife-Science-Near-Death-Experiences/dp/0061452572"},
+                    {name: "The Gateway We Call Death - Nelson", url: "https://www.amazon.com/Gateway-We-Call-Death/dp/0875799531"},
+                    {name: "Suicide: What Really Happens in the Afterlife? - Klimo, Heath 2006", url: "https://www.amazon.com/Suicide-What-Really-Happens-Afterlife/dp/1556436211"},
+                    {name: "The Light Between Us by Laura Lynne Jackson", url: "https://lauralynnejackson.com/"},
+                    {name: "Option B - Sheryl Sandberg, Adam Grant", url: "https://optionb.org/"},
+                    {name: "Life After Suicide - Jennifer Ashton", url: "https://www.goodreads.com/book/show/43500359-life-after-suicide"},
+                    {name: "Grieving a Suicide - Albert Y. Hsu", url: "https://www.amazon.com/Grieving-Suicide-Search-Comfort-Answers/dp/0830844937"},
+                    {name: "It's OK that You're Not OK - Megan Devine", url: "https://refugeingrief.com/its-ok-that-youre-not-ok/"},
+                    {name: "No Time to Say Goodbye - Carla Fine", url: "https://www.goodreads.com/book/show/58099.No_Time_to_Say_Goodbye"},
+                    {name: "Notes on Grief - Chimamanda Ngozi Adichie", url: "https://www.chimamanda.com/notes-on-grief/"},
+                    {name: "Grief Is for People - Sloane Crosley", url: "https://www.sloanecrosley.com/grief-is-for-people-book"},
+                    {name: "Please Be Patient I'm Grieving - Gary Roe", url: "https://www.garyroe.com/please-be-patient/"},
+                    {name: "Forgiving What You Can't Forget - Lysa TerKeurst", url: "https://www.goodreads.com/book/show/150792955-forgiving-what-you-can-t-forget"},
+                    {name: "A Grief Observed - C.S. Lewis", url: "https://www.amazon.com/Grief-Observed-C-S-Lewis/dp/0060652381"}
                 ]
             }
         };
@@ -1633,17 +1634,25 @@
             modalBody.innerHTML = '';
             
             if (category === 'books') {
-                // Display books list
-                const booksList = document.createElement('ul');
-                booksList.className = 'books-list';
+                // UPDATED: Display books with clickable links
+                const resourcesGrid = document.createElement('div');
+                resourcesGrid.className = 'resource-links';
                 
                 data.books.forEach(book => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<i class="fas fa-book book-icon"></i> ${book}`;
-                    booksList.appendChild(li);
+                    const resourceItem = document.createElement('div');
+                    resourceItem.className = 'resource-link-item';
+                    
+                    const link = document.createElement('a');
+                    link.href = book.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.innerHTML = `<i class="fas fa-book"></i> ${book.name}`;
+                    
+                    resourceItem.appendChild(link);
+                    resourcesGrid.appendChild(resourceItem);
                 });
                 
-                modalBody.appendChild(booksList);
+                modalBody.appendChild(resourcesGrid);
             } else {
                 // Display resource links
                 const resourcesSection = document.createElement('div');
@@ -1668,15 +1677,15 @@
                 
                 resourcesSection.appendChild(resourcesGrid);
                 modalBody.appendChild(resourcesSection);
-                
-                // Add note about external links
-                const note = document.createElement('p');
-                note.style.marginTop = '1.5rem';
-                note.style.color = 'var(--gray)';
-                note.style.fontSize = '0.9rem';
-                note.innerHTML = '<i class="fas fa-info-circle"></i> These links will open in a new window.';
-                modalBody.appendChild(note);
             }
+            
+            // Add note about external links
+            const note = document.createElement('p');
+            note.style.marginTop = '1.5rem';
+            note.style.color = 'var(--gray)';
+            note.style.fontSize = '0.9rem';
+            note.innerHTML = '<i class="fas fa-info-circle"></i> These links will open in a new window.';
+            modalBody.appendChild(note);
             
             modal.style.display = 'block';
         }
