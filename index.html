@@ -176,7 +176,7 @@
             position: relative;
             background: 
                 linear-gradient(rgba(109, 40, 217, 0.85), rgba(139, 92, 246, 0.85)),
-                url('hero-backgroundhr.jpg');
+                url('hero-background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -240,7 +240,7 @@
             transform: translateX(5px);
         }
         
-        /* Categories Section - Now 7 items */
+        /* Categories Section - Now 8 items */
         .categories {
             padding: 3rem 0;
         }
@@ -279,6 +279,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--secondary);
+            cursor: pointer;
         }
         
         .category-card:hover {
@@ -296,11 +297,22 @@
             font-size: 1.4rem;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
         
         .category-title i {
             margin-right: 10px;
             color: var(--secondary);
+        }
+        
+        .expand-icon {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card.active .expand-icon {
+            transform: rotate(180deg);
         }
         
         .category-desc {
@@ -323,6 +335,140 @@
         
         .category-link:hover i {
             transform: translateX(5px);
+        }
+        
+        /* Resource Modal Styles */
+        .resource-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            transform: scale(1.2);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .resource-section {
+            margin-bottom: 2rem;
+        }
+        
+        .resource-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-teal);
+        }
+        
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .resource-link-item {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+            transition: transform 0.2s ease;
+        }
+        
+        .resource-link-item:hover {
+            transform: translateX(5px);
+            background-color: var(--light-teal);
+        }
+        
+        .resource-link-item a {
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.4;
+        }
+        
+        .resource-link-item a:hover {
+            color: var(--primary);
+        }
+        
+        .resource-link-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .books-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .books-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .books-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .book-icon {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
         }
         
         /* Featured Image Section */
@@ -760,6 +906,15 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .resource-links {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -865,76 +1020,122 @@
         </div>
     </section>
     
-    <!-- Categories Section - Now 7 items including Therapy -->
+    <!-- Categories Section - Now 8 items including Forgiveness & Reconciliation -->
     <section class="categories" id="categories">
         <div class="container">
             <h2 class="section-title">Resources by Category</h2>
             <div class="category-grid">
-                <!-- Mental Wellness -->
-                <div class="category-card">
+                <!-- Suicide Prevention -->
+                <div class="category-card" data-category="suicide">
                     <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-brain"></i> Mental Wellness</h3>
-                        <p class="category-desc">Strategies and resources for maintaining mental health, managing stress, and promoting emotional well-being.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="category-title">
+                            <span><i class="fas fa-life-ring"></i> Suicide Prevention</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Critical resources, warning signs, and intervention strategies to prevent suicide and support those at risk.</p>
+                        <div class="category-link">Click to View Resources</div>
                     </div>
                 </div>
                 
-                <!-- Mindfulness & Meditation -->
-                <div class="category-card">
+                <!-- Mental Wellness -->
+                <div class="category-card" data-category="mental">
                     <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-spa"></i> Mindfulness & Meditation</h3>
+                        <h3 class="category-title">
+                            <span><i class="fas fa-brain"></i> Mental Wellness</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Strategies and resources for maintaining mental health, managing stress, and promoting emotional well-being.</p>
+                        <div class="category-link">Click to View Resources</div>
+                    </div>
+                </div>
+                
+                <!-- Resilience & Flourishing -->
+                <div class="category-card" data-category="resilience">
+                    <div class="category-content">
+                        <h3 class="category-title">
+                            <span><i class="fas fa-mountain"></i> Resilience & Flourishing</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Tools and techniques to develop psychological resilience, adapt to adversity, and thrive through challenges.</p>
+                        <div class="category-link">Click to View Resources</div>
+                    </div>
+                </div>
+                
+                <!-- Mindfulness, Meditation, Contemplation -->
+                <div class="category-card" data-category="mindfulness">
+                    <div class="category-content">
+                        <h3 class="category-title">
+                            <span><i class="fas fa-spa"></i> Mindfulness & Meditation</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
                         <p class="category-desc">Techniques and practices to cultivate mindfulness, reduce anxiety, and improve focus and emotional regulation.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                        <div class="category-link">Click to View Resources</div>
+                    </div>
+                </div>
+                
+                <!-- Therapy -->
+                <div class="category-card" data-category="therapy">
+                    <div class="category-content">
+                        <h3 class="category-title">
+                            <span><i class="fas fa-couch"></i> Therapy Options</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Information about different types of therapy, finding therapists, and accessing mental health treatment.</p>
+                        <div class="category-link">Click to View Resources</div>
                     </div>
                 </div>
                 
                 <!-- Grief & Loss -->
-                <div class="category-card">
+                <div class="category-card" data-category="grief">
                     <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-hands-helping"></i> Grief & Loss</h3>
+                        <h3 class="category-title">
+                            <span><i class="fas fa-hands-helping"></i> Grief & Loss</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
                         <p class="category-desc">Support and guidance for navigating grief, loss, and bereavement with compassion and resilience.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                        <div class="category-link">Click to View Resources</div>
                     </div>
                 </div>
                 
-                <!-- Suicide Prevention -->
-                <div class="category-card">
+                <!-- Forgiveness & Reconciliation -->
+                <div class="category-card" data-category="forgiveness">
                     <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-life-ring"></i> Suicide Prevention</h3>
-                        <p class="category-desc">Critical resources, warning signs, and intervention strategies to prevent suicide and support those at risk.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="category-title">
+                            <span><i class="fas fa-handshake"></i> Forgiveness & Reconciliation</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Resources for healing through forgiveness, reconciliation, and repairing relationships after trauma or loss.</p>
+                        <div class="category-link">Click to View Resources</div>
                     </div>
                 </div>
                 
-                <!-- Resilience -->
-                <div class="category-card">
+                <!-- Helpful Books -->
+                <div class="category-card" data-category="books">
                     <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-mountain"></i> Resilience Building</h3>
-                        <p class="category-desc">Tools and techniques to develop psychological resilience, adapt to adversity, and thrive through challenges.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Addiction Recovery -->
-                <div class="category-card">
-                    <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-hand-holding-heart"></i> Addiction Recovery</h3>
-                        <p class="category-desc">Resources and support systems for individuals and families navigating addiction and recovery journeys.</p>
-                        <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Therapy Options -->
-                <div class="category-card">
-                    <div class="category-content">
-                        <h3 class="category-title"><i class="fas fa-couch"></i> Therapy Options</h3>
-                        <p class="category-desc">Information about different types of therapy, finding therapists, and accessing mental health treatment.</p>
-                        <a href="#therapy" class="category-link">Explore Options <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="category-title">
+                            <span><i class="fas fa-book-open"></i> Helpful Books</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </h3>
+                        <p class="category-desc">Recommended books on suicide prevention, grief, resilience, and healing from leading authors and experts.</p>
+                        <div class="category-link">Click to View Books</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Resource Modals -->
+    <div id="resourceModal" class="resource-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Resources</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
     
     <!-- Therapy Options Section -->
     <section class="therapy-options" id="therapy">
@@ -1225,6 +1426,125 @@
             </div>
         </div>
     </footer>
+
+    <!-- Resource Data -->
+    <script>
+        const resourceData = {
+            suicide: {
+                title: "Suicide Prevention Resources",
+                resources: [
+                    {name: "QPR Institute", url: "https://qprinstitute.com/"},
+                    {name: "Living Room Conversations", url: "https://livingroomconversations.org/"},
+                    {name: "LivingWorks", url: "https://livingworks.net/"},
+                    {name: "Safe2Tell Wyoming", url: "https://www.safe2tellwy.org/"},
+                    {name: "Project ChildSafe", url: "https://projectchildsafe.org/"},
+                    {name: "Jason Foundation", url: "https://jasonfoundation.com/"},
+                    {name: "American Foundation for Suicide Prevention", url: "https://afsp.org/"},
+                    {name: "The Trevor Project", url: "https://www.thetrevorproject.org/"},
+                    {name: "Everytown Research - Suicide Prevention Laws", url: "https://everytownresearch.org/two-decades-of-suicide-prevention-laws-lessons-from-national-leaders-in-gun-safety-policy/"},
+                    {name: "Harvard Means Matter", url: "https://hsph.harvard.edu/research/means-matter/"},
+                    {name: "Zero Suicide", url: "https://zerosuicide.edc.org/"},
+                    {name: "Sources of Strength", url: "https://sourcesofstrength.org/"}
+                ]
+            },
+            mental: {
+                title: "Mental Wellness Resources",
+                resources: [
+                    {name: "Global Wellness Institute", url: "https://globalwellnessinstitute.org/what-is-wellness/mental-wellness/"},
+                    {name: "NIH Mental Health", url: "https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health"},
+                    {name: "World Health Organization", url: "https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response"},
+                    {name: "National Council for Mental Wellbeing", url: "https://www.thenationalcouncil.org/"},
+                    {name: "National Alliance on Mental Illness", url: "https://www.nami.org/"}
+                ]
+            },
+            resilience: {
+                title: "Resilience & Flourishing Resources",
+                resources: [
+                    {name: "Living Room Conversations", url: "https://livingroomconversations.org/"},
+                    {name: "Resilience Institute", url: "https://resiliencei.com/"},
+                    {name: "Top Ten Resilience Traits", url: "https://www.coventry.gov.uk/downloads/file/36486/top_ten_traits"},
+                    {name: "50 Best Resilience Quotes", url: "https://home.hellodriven.com/articles/the-50-best-resilience-quotes/"},
+                    {name: "Human Flourishing Program - Harvard", url: "https://hfh.fas.harvard.edu/"},
+                    {name: "Global Flourishing Study Report", url: "https://globalflourishingstudy.com/wp-content/uploads/2025/04/GFS_Report-1.pdf"},
+                    {name: "Phone-Free Schools Movement", url: "https://www.phonefreeschoolsmovement.org/"},
+                    {name: "The Anxious Generation", url: "https://www.anxiousgeneration.com/"},
+                    {name: "CDC Emotional Well-being", url: "https://www.cdc.gov/emotional-well-being/improve-your-emotional-well-being/index.html"},
+                    {name: "Random Acts of Kindness", url: "https://www.randomactsofkindness.org/kindness-quotes"}
+                ]
+            },
+            mindfulness: {
+                title: "Mindfulness, Meditation & Stillness Resources",
+                resources: [
+                    {name: "Lower Lights Wisdom", url: "https://lowerlightswisdom.org/"},
+                    {name: "Suzanne Giesemann", url: "https://suzannegiesemann.com/"},
+                    {name: "Awaken the World", url: "https://awakentheworld.com/"},
+                    {name: "Turning Within", url: "https://www.turningwithin.org/"},
+                    {name: "Wim Hof Method", url: "https://www.wimhofmethod.com"},
+                    {name: "The Practice of Stillness", url: "https://fullfocus.co/the-practice-of-stillness/"},
+                    {name: "Linda Howe", url: "https://lindahowe.com/"}
+                ]
+            },
+            therapy: {
+                title: "Therapy Resources",
+                resources: [
+                    {name: "Internal Family Systems Institute", url: "https://ifs-institute.com/"},
+                    {name: "Online Hypnotherapy Clinic", url: "https://www.onlinehypnotherapyclinic.com/self-hypnosis-relaxation-techniques.html"},
+                    {name: "Oxbow Center Wyoming", url: "https://www.oxbowcenterwy.org/"},
+                    {name: "Family Circle Counseling", url: "https://familycirclecounseling.com/"},
+                    {name: "Danielle Warren Therapy", url: "https://danielle-warren.clientsecure.me/"},
+                    {name: "Laramie Behavioral Mental Health", url: "https://www.lbmacp.org/"}
+                ]
+            },
+            grief: {
+                title: "Grief & Loss Resources",
+                resources: [
+                    {name: "GriefShare", url: "https://www.griefshare.org/"},
+                    {name: "Gary Roe - Grief Resources", url: "https://www.garyroe.com/"},
+                    {name: "Gabby Bernstein - Spirit Guides", url: "https://gabbybernstein.com/spirit-guides/"},
+                    {name: "Grief.com", url: "https://grief.com/"},
+                    {name: "Forever Family Foundation", url: "https://foreverfamilyfoundation.org/"},
+                    {name: "Laura Lynne Jackson", url: "https://lauralynnejackson.com/"},
+                    {name: "Good Grief", url: "https://good-grief.org/"}
+                ]
+            },
+            forgiveness: {
+                title: "Forgiveness & Reconciliation Resources",
+                resources: [
+                    {name: "International Forgiveness Institute", url: "https://internationalforgiveness.com/"},
+                    {name: "The Forgiveness Project", url: "https://www.theforgivenessproject.com/"},
+                    {name: "Greater Good Science Center - Forgiveness", url: "https://greatergood.berkeley.edu/topic/forgiveness"},
+                    {name: "APA Forgiveness Guide", url: "https://www.apa.org/topics/forgiveness"},
+                    {name: "The Center for Mindful Living - Reconciliation", url: "https://www.mindfulliving.com/reconciliation"},
+                    {name: "Restorative Justice", url: "https://restorativejustice.org/"},
+                    {name: "The Forgiveness Challenge", url: "https://www.forgivenesschallenge.com/"}
+                ]
+            },
+            books: {
+                title: "Helpful Books on Resilience, Grief & Healing",
+                books: [
+                    "The Light After Death - Vincent Todd Tolman",
+                    "Aftermath - Gary Roe",
+                    "What's On the Other Side - Top",
+                    "The Grief Recovery Handbook - John James and Russell Friedman",
+                    "Evidence of the Afterlife - Long, Perry",
+                    "The Gateway We Call Death - Nelson",
+                    "Suicide: What Really Happens in the Afterlife? - Klimo, Heath 2006",
+                    "The Light Between Us by Laura Lynne Jackson",
+                    "Option B - Sheryl Sandberg, Adam Grant",
+                    "Life After Suicide - Jennifer Ashton",
+                    "Grieving a Suicide - Albert Y. Hsu",
+                    "It's OK that You're Not OK - Megan Devine",
+                    "No Time to Say Goodbye - Carla Fine",
+                    "Suicide - Earl A. Grollman",
+                    "Understanding Suicide - Connie Goldsmith",
+                    "Notes on Grief - Chimamanda Ngozi Adichie",
+                    "Grief Is for People - Sloane Crosley",
+                    "Please Be Patient I'm Grieving - Gary Roe",
+                    "Forgiving What You Can't Forget - Lysa TerKeurst"
+                ]
+            }
+        };
+    </script>
     
     <script>
         // Mobile menu toggle
@@ -1274,6 +1594,88 @@
                 hero.style.opacity = '1';
             }, 100);
         });
+        
+        // Resource Modal Functionality
+        const modal = document.getElementById('resourceModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Open modal when category card is clicked
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                openResourceModal(category);
+            });
+        });
+        
+        // Close modal when X is clicked
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        function openResourceModal(category) {
+            const data = resourceData[category];
+            if (!data) return;
+            
+            modalTitle.textContent = data.title;
+            modalBody.innerHTML = '';
+            
+            if (category === 'books') {
+                // Display books list
+                const booksList = document.createElement('ul');
+                booksList.className = 'books-list';
+                
+                data.books.forEach(book => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-book book-icon"></i> ${book}`;
+                    booksList.appendChild(li);
+                });
+                
+                modalBody.appendChild(booksList);
+            } else {
+                // Display resource links
+                const resourcesSection = document.createElement('div');
+                resourcesSection.className = 'resource-section';
+                
+                const resourcesGrid = document.createElement('div');
+                resourcesGrid.className = 'resource-links';
+                
+                data.resources.forEach(resource => {
+                    const resourceItem = document.createElement('div');
+                    resourceItem.className = 'resource-link-item';
+                    
+                    const link = document.createElement('a');
+                    link.href = resource.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.innerHTML = `<i class="fas fa-external-link-alt"></i> ${resource.name}`;
+                    
+                    resourceItem.appendChild(link);
+                    resourcesGrid.appendChild(resourceItem);
+                });
+                
+                resourcesSection.appendChild(resourcesGrid);
+                modalBody.appendChild(resourcesSection);
+                
+                // Add note about external links
+                const note = document.createElement('p');
+                note.style.marginTop = '1.5rem';
+                note.style.color = 'var(--gray)';
+                note.style.fontSize = '0.9rem';
+                note.innerHTML = '<i class="fas fa-info-circle"></i> These links will open in a new window.';
+                modalBody.appendChild(note);
+            }
+            
+            modal.style.display = 'block';
+        }
     </script>
 </body>
 </html>
