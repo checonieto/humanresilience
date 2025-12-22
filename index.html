@@ -6,19 +6,19 @@
     <title>Human Resilience - Resources for Mental Wellness & Suicide Prevention</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
+        /* Base Styles with Purple & Teal Theme */
         :root {
-            --primary: #2c5fa5; /* Deep blue */
-            --secondary: #5a9bd5; /* Light blue */
+            --primary: #6d28d9; /* Purple */
+            --secondary: #0d9488; /* Teal */
             --accent: #ff6b6b; /* Emergency red */
-            --gold: #ffc107; /* Gold color */
-            --light-gold: #fff3cd; /* Light gold */
-            --light: #f0f8ff; /* Light blue background */
-            --dark: #343a40;
-            --success: #4caf50;
-            --warning: #ff9800;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
+            --light-purple: #ede9fe; /* Light purple */
+            --light-teal: #ccfbf1; /* Light teal */
+            --light: #faf5ff; /* Light purple background */
+            --dark: #1e293b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
         }
         
         * {
@@ -41,10 +41,10 @@
             padding: 0 20px;
         }
         
-        /* Emergency Button Styles */
+        /* Emergency Button Styles - Fixed for mobile */
         .emergency-container {
             position: fixed;
-            top: 20px;
+            top: 85px;
             right: 20px;
             z-index: 1000;
         }
@@ -82,7 +82,7 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
             color: white;
             padding: 2rem 0;
             text-align: center;
@@ -97,7 +97,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 193, 7, 0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(13, 148, 136, 0.1) 50%, transparent 70%);
             pointer-events: none;
         }
         
@@ -112,7 +112,7 @@
         
         .logo i {
             margin-right: 10px;
-            color: var(--gold);
+            color: var(--secondary);
         }
         
         .tagline {
@@ -129,7 +129,7 @@
             position: sticky;
             top: 0;
             z-index: 999;
-            border-bottom: 3px solid var(--gold);
+            border-bottom: 3px solid var(--secondary);
         }
         
         .nav-container {
@@ -159,7 +159,7 @@
         
         .nav-links a:hover {
             color: var(--primary);
-            background-color: var(--light-gold);
+            background-color: var(--light-purple);
         }
         
         .mobile-menu-btn {
@@ -175,7 +175,7 @@
         .hero {
             position: relative;
             background: 
-                linear-gradient(rgba(44, 95, 165, 0.85), rgba(90, 155, 213, 0.85)),
+                linear-gradient(rgba(109, 40, 217, 0.85), rgba(139, 92, 246, 0.85)),
                 url('hero-backgroundhr.jpg');
             background-size: cover;
             background-position: center;
@@ -184,7 +184,7 @@
             text-align: center;
             padding: 6rem 1rem;
             margin-bottom: 2rem;
-            border-bottom: 5px solid var(--gold);
+            border-bottom: 5px solid var(--secondary);
             min-height: 70vh;
             display: flex;
             align-items: center;
@@ -211,24 +211,24 @@
         }
         
         .hero-btn {
-            background-color: var(--gold);
-            color: #333;
+            background-color: var(--secondary);
+            color: white;
             padding: 15px 30px;
             border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
             transition: all 0.3s ease;
             font-size: 1.1rem;
             margin-top: 1rem;
         }
         
         .hero-btn:hover {
-            background-color: #e0a800;
+            background-color: #0f766e;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.6);
         }
         
         .hero-btn i {
@@ -240,7 +240,7 @@
             transform: translateX(5px);
         }
         
-        /* Categories Section */
+        /* Categories Section - Now 7 items */
         .categories {
             padding: 3rem 0;
         }
@@ -262,7 +262,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background-color: var(--gold);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             border-radius: 2px;
         }
         
@@ -278,7 +278,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--gold);
+            border-top: 4px solid var(--secondary);
         }
         
         .category-card:hover {
@@ -300,7 +300,7 @@
         
         .category-title i {
             margin-right: 10px;
-            color: var(--gold);
+            color: var(--secondary);
         }
         
         .category-desc {
@@ -328,7 +328,7 @@
         /* Featured Image Section */
         .featured-images {
             padding: 3rem 0;
-            background-color: white;
+            background-color: var(--light-teal);
         }
         
         .image-grid {
@@ -370,10 +370,90 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Therapy Options Section */
+        .therapy-options {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .therapy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .therapy-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--light-purple);
+            transition: transform 0.3s ease;
+        }
+        
+        .therapy-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+        
+        .therapy-icon {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .therapy-content {
+            padding: 1.5rem;
+        }
+        
+        .therapy-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .therapy-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .therapy-features li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .therapy-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .therapy-resource-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .therapy-resource-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .therapy-resource-btn:hover i {
+            transform: translateX(5px);
+        }
+        
         /* Resources Section */
         .resources {
             padding: 3rem 0;
-            background-color: var(--light);
+            background-color: var(--light-teal);
         }
         
         .resource-list {
@@ -383,7 +463,7 @@
         
         .resource-item {
             background-color: white;
-            border-left: 4px solid var(--gold);
+            border-left: 4px solid var(--secondary);
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             border-radius: 0 5px 5px 0;
@@ -399,7 +479,7 @@
         
         .resource-item h3 i {
             margin-right: 10px;
-            color: var(--gold);
+            color: var(--secondary);
         }
         
         .hotline-buttons {
@@ -425,7 +505,7 @@
         }
         
         .call-btn:hover {
-            background-color: #1e4a8a;
+            background-color: #5b21b6;
             transform: translateY(-2px);
         }
         
@@ -435,7 +515,7 @@
         }
         
         .text-btn:hover {
-            background-color: #3a87c9;
+            background-color: #0f766e;
             transform: translateY(-2px);
         }
         
@@ -443,13 +523,150 @@
             margin-right: 8px;
         }
         
+        /* Lived Experiences Section */
+        .lived-experiences {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--light-purple), var(--light-teal));
+            position: relative;
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+        
+        .experience-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .experience-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+        
+        .experience-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .experience-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .experience-content {
+            padding: 2.5rem;
+        }
+        
+        .experience-section {
+            margin-bottom: 2rem;
+        }
+        
+        .experience-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .experience-section h3 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .warning-box {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box h4 {
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .warning-box h4 i {
+            margin-right: 10px;
+        }
+        
+        .takeaway-box {
+            background-color: var(--light-purple);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .takeaway-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .takeaway-box h4 i {
+            margin-right: 10px;
+        }
+        
+        .share-story-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        .share-story-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(109, 40, 217, 0.5);
+        }
+        
+        .share-story-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .share-story-btn:hover i {
+            transform: translateX(5px);
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 3rem 0 1.5rem;
-            margin-top: 2rem;
-            border-top: 5px solid var(--gold);
+            margin-top: 0;
+            border-top: 5px solid var(--secondary);
         }
         
         .footer-content {
@@ -460,7 +677,7 @@
         }
         
         .footer-section h3 {
-            color: var(--gold);
+            color: var(--secondary);
             margin-bottom: 1.2rem;
             font-size: 1.3rem;
         }
@@ -474,14 +691,14 @@
         }
         
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--secondary);
         }
         
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
-            border-top: 1px solid #555;
-            color: #aaa;
+            border-top: 1px solid #475569;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
         
@@ -520,14 +737,19 @@
                 font-size: 1.2rem;
             }
             
+            /* Emergency button moved for mobile to avoid hamburger menu */
             .emergency-container {
-                top: 10px;
-                right: 10px;
+                top: 80px;
+                right: 15px;
             }
             
             .emergency-btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
+            }
+            
+            .experience-header h2 {
+                font-size: 2rem;
             }
             
             .hotline-buttons {
@@ -556,6 +778,31 @@
             .section-title {
                 font-size: 1.8rem;
             }
+            
+            .experience-content {
+                padding: 1.5rem;
+            }
+            
+            .emergency-container {
+                top: 75px;
+                right: 10px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .emergency-container {
+                position: fixed;
+                bottom: 20px;
+                top: auto;
+                right: 20px;
+                left: 20px;
+                text-align: center;
+            }
+            
+            .emergency-btn {
+                justify-content: center;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -571,7 +818,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-heartbeat"></i>
                 Human Resilience
             </div>
             <p class="tagline">A comprehensive resource for mental wellness, suicide prevention, and building resilience to help individuals and communities thrive.</p>
@@ -582,7 +829,7 @@
     <nav>
         <div class="container nav-container">
             <div class="logo" style="font-size: 1.5rem; color: var(--primary);">
-                <i class="fas fa-heart" style="color: var(--gold);"></i> HR
+                <i class="fas fa-heartbeat" style="color: var(--secondary);"></i> HR
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -592,9 +839,10 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#categories"><i class="fas fa-list"></i> Resources</a></li>
+                <li><a href="#therapy"><i class="fas fa-couch"></i> Therapy</a></li>
                 <li><a href="#images"><i class="fas fa-images"></i> Images</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#resources"><i class="fas fa-phone"></i> Hotlines</a></li>
+                <li><a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a></li>
             </ul>
         </div>
     </nav>
@@ -609,15 +857,15 @@
                     <a href="#categories" class="hero-btn">
                         Explore Resources <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#about" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
-                        Get Immediate Help <i class="fas fa-hands-helping"></i>
+                    <a href="#therapy" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
+                        Find Therapy Options <i class="fas fa-couch"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Categories Section -->
+    <!-- Categories Section - Now 7 items including Therapy -->
     <section class="categories" id="categories">
         <div class="container">
             <h2 class="section-title">Resources by Category</h2>
@@ -675,6 +923,104 @@
                         <a href="#" class="category-link">Explore Resources <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                
+                <!-- Therapy Options -->
+                <div class="category-card">
+                    <div class="category-content">
+                        <h3 class="category-title"><i class="fas fa-couch"></i> Therapy Options</h3>
+                        <p class="category-desc">Information about different types of therapy, finding therapists, and accessing mental health treatment.</p>
+                        <a href="#therapy" class="category-link">Explore Options <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Therapy Options Section -->
+    <section class="therapy-options" id="therapy">
+        <div class="container">
+            <h2 class="section-title">Therapy Options & Mental Health Treatment</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--gray);">
+                Professional therapy can be a powerful tool for mental wellness. Explore different approaches to find what works best for you.
+            </p>
+            
+            <div class="therapy-grid">
+                <!-- Individual Therapy -->
+                <div class="therapy-card">
+                    <div class="therapy-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="therapy-content">
+                        <h3>Individual Therapy</h3>
+                        <p>One-on-one sessions with a licensed therapist to address personal challenges, develop coping strategies, and work toward mental wellness goals.</p>
+                        <ul class="therapy-features">
+                            <li><i class="fas fa-check-circle"></i> Personalized attention</li>
+                            <li><i class="fas fa-check-circle"></i> Confidential setting</li>
+                            <li><i class="fas fa-check-circle"></i> Tailored treatment plans</li>
+                            <li><i class="fas fa-check-circle"></i> Various approaches (CBT, DBT, psychodynamic)</li>
+                        </ul>
+                        <a href="#" class="therapy-resource-btn">Find Individual Therapists <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Group Therapy -->
+                <div class="therapy-card">
+                    <div class="therapy-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="therapy-content">
+                        <h3>Group Therapy</h3>
+                        <p>Therapeutic sessions with multiple participants facilitated by a professional, offering peer support and shared learning experiences.</p>
+                        <ul class="therapy-features">
+                            <li><i class="fas fa-check-circle"></i> Peer support and validation</li>
+                            <li><i class="fas fa-check-circle"></i> Reduced feelings of isolation</li>
+                            <li><i class="fas fa-check-circle"></i> Often more affordable</li>
+                            <li><i class="fas fa-check-circle"></i> Learn from others' experiences</li>
+                        </ul>
+                        <a href="#" class="therapy-resource-btn">Find Group Sessions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Online Therapy -->
+                <div class="therapy-card">
+                    <div class="therapy-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <div class="therapy-content">
+                        <h3>Online & Teletherapy</h3>
+                        <p>Virtual therapy sessions that provide convenient access to mental health professionals from anywhere with an internet connection.</p>
+                        <ul class="therapy-features">
+                            <li><i class="fas fa-check-circle"></i> Access from home</li>
+                            <li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
+                            <li><i class="fas fa-check-circle"></i> Geographic barriers removed</li>
+                            <li><i class="fas fa-check-circle"></i> Various platforms available</li>
+                        </ul>
+                        <a href="#" class="therapy-resource-btn">Explore Online Options <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background-color: var(--light-purple); border-radius: 10px;">
+                <h3 style="color: var(--primary); text-align: center; margin-bottom: 1rem;">Finding the Right Therapist</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-search"></i> How to Search</h4>
+                        <p>Use directories like Psychology Today, TherapyDen, or your insurance provider's website to find licensed therapists in your area or online.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-question-circle"></i> Questions to Ask</h4>
+                        <p>Consider asking about their approach, experience with your concerns, fees, insurance acceptance, and availability during initial consultations.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-handshake"></i> The Right Fit</h4>
+                        <p>The therapeutic relationship is key. It may take a few sessions to determine if a therapist is the right fit for you - that's normal and encouraged.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="mailto:therapy@humanresilience.org?subject=Therapy Resources Inquiry" class="hero-btn" style="display: inline-flex;">
+                        <i class="fas fa-envelope"></i> Get Therapy Resources
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -682,12 +1028,12 @@
     <!-- Featured Images Section -->
     <section class="featured-images" id="images">
         <div class="container">
-            <h2 class="section-title">Visualizing Resilience & Hope</h2>
+            <h2 class="section-title">Visualizing Hope & Recovery</h2>
             <div class="image-grid">
                 <div class="image-card">
                     <img src="mindfulness.jpg" alt="Person practicing mindfulness meditation in a peaceful setting" class="featured-img">
                     <div class="image-caption">
-                        <h3><i class="fas fa-spa" style="color: var(--gold);"></i> Mindfulness in Practice</h3>
+                        <h3><i class="fas fa-spa" style="color: var(--secondary);"></i> Mindfulness in Practice</h3>
                         <p>Finding peace and presence through mindfulness techniques that build emotional resilience.</p>
                     </div>
                 </div>
@@ -695,7 +1041,7 @@
                 <div class="image-card">
                     <img src="support-community.jpg" alt="Community support group meeting together" class="featured-img">
                     <div class="image-caption">
-                        <h3><i class="fas fa-users" style="color: var(--gold);"></i> Community Support</h3>
+                        <h3><i class="fas fa-users" style="color: var(--secondary);"></i> Community Support</h3>
                         <p>Healing happens together. Support groups provide connection and understanding during difficult times.</p>
                     </div>
                 </div>
@@ -703,7 +1049,7 @@
                 <div class="image-card">
                     <img src="hope-recovery.jpg" alt="Symbol of hope and recovery with sunrise imagery" class="featured-img">
                     <div class="image-caption">
-                        <h3><i class="fas fa-sun" style="color: var(--gold);"></i> Pathway to Hope</h3>
+                        <h3><i class="fas fa-sun" style="color: var(--secondary);"></i> Pathway to Hope</h3>
                         <p>Recovery and resilience are journeys that lead to renewed strength and purpose.</p>
                     </div>
                 </div>
@@ -712,7 +1058,7 @@
     </section>
     
     <!-- Resources Section -->
-    <section class="resources" id="about">
+    <section class="resources" id="resources">
         <div class="container">
             <h2 class="section-title">Immediate Help & Hotlines</h2>
             <div class="resource-list">
@@ -754,6 +1100,89 @@
         </div>
     </section>
     
+    <!-- Lived Experiences Section -->
+    <section class="lived-experiences" id="lived-experiences">
+        <div class="ribbon"></div>
+        <div class="container">
+            <div class="experience-container">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h2>Lived Experiences: John's Story</h2>
+                        <p class="experience-subtitle">A life lost too soon - understanding warning signs and the importance of intervention</p>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-section">
+                            <h3><i class="fas fa-user"></i> Who Was John Doe?</h3>
+                            <p>John was a 16-year-old high school sophomore from a suburban community. To most people, he seemed like a typical teenager - he played on the school soccer team, got decent grades, and had a small group of close friends. Outwardly, John appeared to be handling the pressures of adolescence well.</p>
+                            <p>But beneath the surface, John was struggling with intense feelings of isolation, academic pressure, and social anxiety that he kept hidden from everyone around him.</p>
+                        </div>
+                        
+                        <div class="experience-section">
+                            <h3><i class="fas fa-exclamation-triangle"></i> The Warning Signs</h3>
+                            <p>In retrospect, there were several warning signs that family and friends later recognized:</p>
+                            <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                                <li style="margin-bottom: 0.5rem;">Withdrawal from friends and activities he once enjoyed</li>
+                                <li style="margin-bottom: 0.5rem;">Changes in sleep patterns - sleeping too much or too little</li>
+                                <li style="margin-bottom: 0.5rem;">Declining academic performance despite being capable</li>
+                                <li style="margin-bottom: 0.5rem;">Vague comments about "not being around much longer"</li>
+                                <li style="margin-bottom: 0.5rem;">Giving away prized possessions</li>
+                                <li>Increased irritability and mood swings</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4><i class="fas fa-skull-crossbones"></i> The Tragic Outcome</h4>
+                            <p>In March of last year, John died by suicide. His family was completely blindsided, having missed the subtle signs of his deep despair. Friends later recalled that John had made comments about feeling "overwhelmed" and "like a burden," but they didn't understand the seriousness of these statements at the time.</p>
+                            <p>The community was devastated. John's death left behind grieving parents, a younger sister who idolized him, friends struggling with guilt, and a school community questioning how this could have happened.</p>
+                        </div>
+                        
+                        <div class="experience-section">
+                            <h3><i class="fas fa-heart"></i> What We Can Learn</h3>
+                            <p>John's story highlights several critical lessons about suicide prevention:</p>
+                            <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                                <li style="margin-bottom: 0.5rem;"><strong>Depression doesn't always look like sadness</strong> - Sometimes it manifests as irritability, withdrawal, or changes in behavior</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Take all statements about suicide seriously</strong> - Even vague comments should be addressed</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Asking directly saves lives</strong> - Research shows asking someone if they're considering suicide does NOT increase risk</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Connect before you correct</strong> - Listen without judgment before offering solutions</li>
+                                <li><strong>Follow up matters</strong> - Continued support is crucial even after immediate crisis passes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="takeaway-box">
+                            <h4><i class="fas fa-hands-helping"></i> How John's Story Can Help Others</h4>
+                            <p>John's family has chosen to share his story to help prevent other families from experiencing similar tragedy. They emphasize:</p>
+                            <p><strong>1. Education is prevention</strong> - Knowing warning signs and how to respond can save lives.</p>
+                            <p><strong>2. Reduce stigma</strong> - Mental health challenges should be discussed as openly as physical health issues.</p>
+                            <p><strong>3. Resources work</strong> - The 988 lifeline and other crisis services are effective when utilized.</p>
+                            <p><strong>4. Community matters</strong> - Building supportive environments where people feel safe to share struggles is essential.</p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#resources" class="hero-btn" style="display: inline-flex;">
+                                <i class="fas fa-phone-alt"></i> Get Help Now
+                            </a>
+                            
+                            <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light-teal); border-radius: 10px;">
+                                <h3 style="color: var(--primary); margin-bottom: 1rem;">Share Your Story</h3>
+                                <p>Your lived experiences can help others feel less alone and more understood. If you'd like to share your story of resilience, recovery, or loss to help others, we'd be honored to hear from you.</p>
+                                <a href="mailto:stories@humanresilience.org?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
+                                    Do you want to share your story? Click here <i class="fas fa-paper-plane"></i>
+                                </a>
+                                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
+                                    All stories are treated with confidentiality and respect. You can choose to remain anonymous if you prefer.
+                                </p>
+                            </div>
+                            
+                            <p style="margin-top: 2rem; font-style: italic; color: var(--gray);">
+                                If you or someone you know is struggling, please reach out. John's story reminds us that help is available and recovery is possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -773,8 +1202,8 @@
                     <div class="footer-links">
                         <a href="#home"><i class="fas fa-home"></i> Home</a>
                         <a href="#categories"><i class="fas fa-list"></i> Resource Categories</a>
-                        <a href="#images"><i class="fas fa-images"></i> Featured Images</a>
-                        <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+                        <a href="#therapy"><i class="fas fa-couch"></i> Therapy Options</a>
+                        <a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a>
                     </div>
                 </div>
                 
@@ -782,8 +1211,8 @@
                     <h3>Contact & Support</h3>
                     <div class="footer-links">
                         <a href="mailto:info@humanresilience.org"><i class="fas fa-envelope"></i> info@humanresilience.org</a>
-                        <a href="#contact"><i class="fas fa-comment"></i> Contact Form</a>
-                        <a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                        <a href="mailto:stories@humanresilience.org"><i class="fas fa-comment"></i> Share Your Story</a>
+                        <a href="mailto:therapy@humanresilience.org"><i class="fas fa-couch"></i> Therapy Resources</a>
                         <a href="#disclaimer"><i class="fas fa-exclamation-circle"></i> Disclaimer</a>
                     </div>
                 </div>
@@ -792,6 +1221,7 @@
             <div class="copyright">
                 <p>&copy; 2023 Human Resilience. This site is for informational purposes only and is not a substitute for professional medical advice.</p>
                 <p>If you are in crisis, please call 988 or go to your nearest emergency room.</p>
+                <p style="margin-top: 1rem; font-style: italic;">In memory of John Doe and all those lost to suicide - your stories inspire us to work for change.</p>
             </div>
         </div>
     </footer>
