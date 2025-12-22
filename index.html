@@ -176,7 +176,7 @@
             position: relative;
             background: 
                 linear-gradient(rgba(109, 40, 217, 0.85), rgba(139, 92, 246, 0.85)),
-                url('hero-backgroundhr.jpg');
+                url('hero-background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -516,48 +516,66 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Therapy Options Section */
-        .therapy-options {
-            padding: 3rem 0;
-            background-color: white;
+        /* Therapy Resources Section - More Prominent */
+        .therapy-resources {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
         }
         
-        .therapy-grid {
+        .therapy-resources .section-title {
+            color: white;
+        }
+        
+        .therapy-resources .section-title::after {
+            background: linear-gradient(to right, white, var(--light-teal));
+        }
+        
+        .therapy-highlight {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .therapy-types {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .therapy-card {
-            background-color: white;
+        .therapy-type-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border: 2px solid var(--light-purple);
-            transition: transform 0.3s ease;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
         
-        .therapy-card:hover {
+        .therapy-type-card:hover {
             transform: translateY(-5px);
-            border-color: var(--secondary);
+            background-color: rgba(255, 255, 255, 0.15);
         }
         
-        .therapy-icon {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .therapy-type-card h3 {
             color: white;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 2.5rem;
-        }
-        
-        .therapy-content {
-            padding: 1.5rem;
-        }
-        
-        .therapy-content h3 {
-            color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .therapy-type-card h3 i {
+            margin-right: 10px;
+            color: var(--light-teal);
+        }
+        
+        .therapy-type-card p {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .therapy-features {
@@ -569,30 +587,46 @@
             padding: 0.3rem 0;
             display: flex;
             align-items: flex-start;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .therapy-features li i {
-            color: var(--secondary);
+            color: var(--light-teal);
             margin-right: 10px;
             margin-top: 3px;
         }
         
-        .therapy-resource-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--secondary);
-            font-weight: 600;
+        .therapy-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .therapy-action-btn {
+            background-color: white;
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
         
-        .therapy-resource-btn i {
-            margin-left: 5px;
+        .therapy-action-btn:hover {
+            background-color: var(--light-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .therapy-action-btn i {
+            margin-left: 10px;
             transition: transform 0.3s ease;
         }
         
-        .therapy-resource-btn:hover i {
+        .therapy-action-btn:hover i {
             transform: translateX(5px);
         }
         
@@ -915,6 +949,10 @@
             .resource-links {
                 grid-template-columns: 1fr;
             }
+            
+            .therapy-types {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -994,7 +1032,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#categories"><i class="fas fa-list"></i> Resources</a></li>
-                <li><a href="#therapy"><i class="fas fa-couch"></i> Therapy</a></li>
+                <li><a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a></li>
                 <li><a href="#images"><i class="fas fa-images"></i> Images</a></li>
                 <li><a href="#resources"><i class="fas fa-phone"></i> Hotlines</a></li>
                 <li><a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a></li>
@@ -1012,8 +1050,8 @@
                     <a href="#categories" class="hero-btn">
                         Explore Resources <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#therapy" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
-                        Find Therapy Options <i class="fas fa-couch"></i>
+                    <a href="#therapy-resources" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
+                        Find Therapy Resources <i class="fas fa-couch"></i>
                     </a>
                 </div>
             </div>
@@ -1137,91 +1175,53 @@
         </div>
     </div>
     
-    <!-- Therapy Options Section -->
-    <section class="therapy-options" id="therapy">
+    <!-- Therapy Resources Section - More Prominent -->
+    <section class="therapy-resources" id="therapy-resources">
         <div class="container">
-            <h2 class="section-title">Therapy Options & Mental Health Treatment</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--gray);">
+            <h2 class="section-title">Therapy Resources</h2>
+            <p class="therapy-highlight">
                 Professional therapy can be a powerful tool for mental wellness. Explore different approaches to find what works best for you.
             </p>
             
-            <div class="therapy-grid">
-                <!-- Individual Therapy -->
-                <div class="therapy-card">
-                    <div class="therapy-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="therapy-content">
-                        <h3>Individual Therapy</h3>
-                        <p>One-on-one sessions with a licensed therapist to address personal challenges, develop coping strategies, and work toward mental wellness goals.</p>
-                        <ul class="therapy-features">
-                            <li><i class="fas fa-check-circle"></i> Personalized attention</li>
-                            <li><i class="fas fa-check-circle"></i> Confidential setting</li>
-                            <li><i class="fas fa-check-circle"></i> Tailored treatment plans</li>
-                            <li><i class="fas fa-check-circle"></i> Various approaches (CBT, DBT, psychodynamic)</li>
-                        </ul>
-                        <a href="#" class="therapy-resource-btn">Find Individual Therapists <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="therapy-types">
+                <div class="therapy-type-card">
+                    <h3><i class="fas fa-user-md"></i> Individual Therapy</h3>
+                    <p>One-on-one sessions with a licensed therapist to address personal challenges, develop coping strategies, and work toward mental wellness goals.</p>
+                    <ul class="therapy-features">
+                        <li><i class="fas fa-check-circle"></i> Personalized attention</li>
+                        <li><i class="fas fa-check-circle"></i> Confidential setting</li>
+                        <li><i class="fas fa-check-circle"></i> Tailored treatment plans</li>
+                        <li><i class="fas fa-check-circle"></i> Various approaches (CBT, DBT, psychodynamic)</li>
+                    </ul>
                 </div>
                 
-                <!-- Group Therapy -->
-                <div class="therapy-card">
-                    <div class="therapy-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="therapy-content">
-                        <h3>Group Therapy</h3>
-                        <p>Therapeutic sessions with multiple participants facilitated by a professional, offering peer support and shared learning experiences.</p>
-                        <ul class="therapy-features">
-                            <li><i class="fas fa-check-circle"></i> Peer support and validation</li>
-                            <li><i class="fas fa-check-circle"></i> Reduced feelings of isolation</li>
-                            <li><i class="fas fa-check-circle"></i> Often more affordable</li>
-                            <li><i class="fas fa-check-circle"></i> Learn from others' experiences</li>
-                        </ul>
-                        <a href="#" class="therapy-resource-btn">Find Group Sessions <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="therapy-type-card">
+                    <h3><i class="fas fa-users"></i> Group Therapy</h3>
+                    <p>Therapeutic sessions with multiple participants facilitated by a professional, offering peer support and shared learning experiences.</p>
+                    <ul class="therapy-features">
+                        <li><i class="fas fa-check-circle"></i> Peer support and validation</li>
+                        <li><i class="fas fa-check-circle"></i> Reduced feelings of isolation</li>
+                        <li><i class="fas fa-check-circle"></i> Often more affordable</li>
+                        <li><i class="fas fa-check-circle"></i> Learn from others' experiences</li>
+                    </ul>
                 </div>
                 
-                <!-- Online Therapy -->
-                <div class="therapy-card">
-                    <div class="therapy-icon">
-                        <i class="fas fa-laptop-medical"></i>
-                    </div>
-                    <div class="therapy-content">
-                        <h3>Online & Teletherapy</h3>
-                        <p>Virtual therapy sessions that provide convenient access to mental health professionals from anywhere with an internet connection.</p>
-                        <ul class="therapy-features">
-                            <li><i class="fas fa-check-circle"></i> Access from home</li>
-                            <li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
-                            <li><i class="fas fa-check-circle"></i> Geographic barriers removed</li>
-                            <li><i class="fas fa-check-circle"></i> Various platforms available</li>
-                        </ul>
-                        <a href="#" class="therapy-resource-btn">Explore Online Options <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="therapy-type-card">
+                    <h3><i class="fas fa-laptop-medical"></i> Online & Teletherapy</h3>
+                    <p>Virtual therapy sessions that provide convenient access to mental health professionals from anywhere with an internet connection.</p>
+                    <ul class="therapy-features">
+                        <li><i class="fas fa-check-circle"></i> Access from home</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> Geographic barriers removed</li>
+                        <li><i class="fas fa-check-circle"></i> Various platforms available</li>
+                    </ul>
                 </div>
             </div>
             
-            <div style="margin-top: 3rem; padding: 2rem; background-color: var(--light-purple); border-radius: 10px;">
-                <h3 style="color: var(--primary); text-align: center; margin-bottom: 1rem;">Finding the Right Therapist</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-search"></i> How to Search</h4>
-                        <p>Use directories like Psychology Today, TherapyDen, or your insurance provider's website to find licensed therapists in your area or online.</p>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-question-circle"></i> Questions to Ask</h4>
-                        <p>Consider asking about their approach, experience with your concerns, fees, insurance acceptance, and availability during initial consultations.</p>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;"><i class="fas fa-handshake"></i> The Right Fit</h4>
-                        <p>The therapeutic relationship is key. It may take a few sessions to determine if a therapist is the right fit for you - that's normal and encouraged.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="mailto:therapy@humanresilience.org?subject=Therapy Resources Inquiry" class="hero-btn" style="display: inline-flex;">
-                        <i class="fas fa-envelope"></i> Get Therapy Resources
-                    </a>
-                </div>
+            <div class="therapy-action">
+                <a href="#categories" class="therapy-action-btn" data-category="therapy">
+                    <i class="fas fa-external-link-alt"></i> View All Therapy Resources
+                </a>
             </div>
         </div>
     </section>
@@ -1403,7 +1403,7 @@
                     <div class="footer-links">
                         <a href="#home"><i class="fas fa-home"></i> Home</a>
                         <a href="#categories"><i class="fas fa-list"></i> Resource Categories</a>
-                        <a href="#therapy"><i class="fas fa-couch"></i> Therapy Options</a>
+                        <a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a>
                         <a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a>
                     </div>
                 </div>
@@ -1515,8 +1515,6 @@
                     {name: "Greater Good Science Center - Forgiveness", url: "https://greatergood.berkeley.edu/topic/forgiveness"},
                     {name: "APA Forgiveness Guide", url: "https://www.apa.org/topics/forgiveness"},
                     {name: "Restorative Justice", url: "https://restorativejustice.org/"}
-                    // Removed: The Center for Mindful Living - Reconciliation
-                    // Removed: The Forgiveness Challenge
                 ]
             },
             books: {
@@ -1607,6 +1605,12 @@
                 const category = this.getAttribute('data-category');
                 openResourceModal(category);
             });
+        });
+        
+        // Open therapy modal when button is clicked
+        document.querySelector('.therapy-action-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            openResourceModal('therapy');
         });
         
         // Close modal when X is clicked
