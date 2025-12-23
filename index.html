@@ -80,6 +80,38 @@
             100% { box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); }
         }
         
+        /* Donate Button Styles */
+        .donate-container {
+            position: fixed;
+            top: 85px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .donate-btn {
+            background-color: var(--success);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            background-color: #0da577;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.6);
+        }
+        
+        .donate-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary), #8b5cf6);
@@ -116,10 +148,12 @@
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            line-height: 1.6;
+            font-style: italic;
         }
         
         /* Navigation */
@@ -176,7 +210,7 @@
             position: relative;
             background: 
                 linear-gradient(rgba(109, 40, 217, 0.85), rgba(139, 92, 246, 0.85)),
-                url('hero-backgroundhr.jpg');
+                url('hero-background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -240,7 +274,53 @@
             transform: translateX(5px);
         }
         
-        /* Categories Section - Now 8 items */
+        /* About Us Section */
+        .about-us {
+            padding: 4rem 0;
+            background-color: white;
+            border-bottom: 3px solid var(--light-teal);
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--light-purple);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .about-content h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        
+        .about-content h3 {
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+        
+        .about-content ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .about-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        /* Categories Section - Now 9 items with new Jeffrey R. Holland quote */
         .categories {
             padding: 3rem 0;
         }
@@ -335,6 +415,68 @@
         
         .category-link:hover i {
             transform: translateX(5px);
+        }
+        
+        /* Quote Card Styles - UPDATED */
+        .quote-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary);
+            border-left: 3px solid var(--secondary);
+            padding: 1.5rem;
+            cursor: pointer;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quote-content {
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        
+        .quote-author {
+            text-align: right;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+        
+        .read-more-btn {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .read-more-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more-btn:hover i {
+            transform: translateX(3px);
         }
         
         /* Resource Modal Styles */
@@ -471,49 +613,68 @@
             flex-shrink: 0;
         }
         
-        /* Featured Image Section */
-        .featured-images {
+        /* Quote Full Content Styles */
+        .quote-full-content {
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-full-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        /* Videos Section - UPDATED to include all 3 videos */
+        .featured-videos {
             padding: 3rem 0;
             background-color: var(--light-teal);
         }
         
-        .image-grid {
+        .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .image-card {
+        .video-card {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             border: 1px solid var(--light-gray);
-        }
-        
-        .image-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .featured-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .image-card:hover .featured-img {
-            transform: scale(1.05);
-        }
-        
-        .image-caption {
-            padding: 1.5rem;
             background-color: white;
         }
         
-        .image-caption h3 {
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .video-caption {
+            padding: 1.5rem;
+        }
+        
+        .video-caption h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         
         /* Therapy Resources Section - More Prominent */
@@ -773,22 +934,23 @@
             color: var(--secondary);
         }
         
-        .warning-box {
-            background-color: #fee2e2;
-            border-left: 4px solid #ef4444;
-            padding: 1.5rem;
+        .reflection-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 2rem;
             margin: 2rem 0;
             border-radius: 0 8px 8px 0;
         }
         
-        .warning-box h4 {
-            color: #dc2626;
-            margin-bottom: 0.5rem;
+        .reflection-box h4 {
+            color: #1d4ed8;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
         }
         
-        .warning-box h4 i {
+        .reflection-box h4 i {
             margin-right: 10px;
         }
         
@@ -923,7 +1085,12 @@
                 right: 15px;
             }
             
-            .emergency-btn {
+            .donate-container {
+                top: 80px;
+                left: 15px;
+            }
+            
+            .emergency-btn, .donate-btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
             }
@@ -953,6 +1120,14 @@
             .therapy-types {
                 grid-template-columns: 1fr;
             }
+            
+            .about-content {
+                padding: 2rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -980,10 +1155,19 @@
                 top: 75px;
                 right: 10px;
             }
+            
+            .donate-container {
+                top: 75px;
+                left: 10px;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 380px) {
-            .emergency-container {
+            .emergency-container, .donate-container {
                 position: fixed;
                 bottom: 20px;
                 top: auto;
@@ -992,9 +1176,13 @@
                 text-align: center;
             }
             
-            .emergency-btn {
+            .emergency-btn, .donate-btn {
                 justify-content: center;
                 width: 100%;
+            }
+            
+            .donate-container {
+                bottom: 80px;
             }
         }
     </style>
@@ -1007,6 +1195,13 @@
         </a>
     </div>
     
+    <!-- Donate Button -->
+    <div class="donate-container">
+        <a href="https://venmo.com/u/TysonHoopesMemorial" target="_blank" class="donate-btn">
+            <i class="fas fa-heart"></i> Donate
+        </a>
+    </div>
+    
     <!-- Header -->
     <header>
         <div class="container">
@@ -1014,16 +1209,16 @@
                 <i class="fas fa-heartbeat"></i>
                 Human Resilience
             </div>
-            <p class="tagline">A comprehensive resource for mental wellness, suicide prevention, and building resilience to help individuals and communities thrive.</p>
+            <p class="tagline">Human Resilience is the learned ability to adapt and grow from the effects of adversity, stress, or trauma. By drawing on diverse resources, individuals can move forward with greater purpose, deeper meaning, and stronger connections with others. This site exists to share insights & resources that have supported us on our own journey of recovery.</p>
         </div>
     </header>
     
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
-            <!-- CHANGED: Updated from "RH" to "Human Resilience" -->
+            <!-- CHANGED: Removed icon and replaced with semi-colon.jpg -->
             <div class="logo" style="font-size: 1.5rem; color: var(--primary);">
-                <i class="fas fa-heartbeat" style="color: var(--secondary);"></i> Human Resilience
+                <img src="semi-colon.jpg" alt="Semi-colon symbol" style="height: 24px; margin-right: 10px; vertical-align: middle;"> Human Resilience
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1032,9 +1227,10 @@
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a></li>
                 <li><a href="#categories"><i class="fas fa-list"></i> Resources</a></li>
                 <li><a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a></li>
-                <li><a href="#images"><i class="fas fa-images"></i> Images</a></li>
+                <li><a href="#featured-videos"><i class="fas fa-video"></i> Videos</a></li>
                 <li><a href="#resources"><i class="fas fa-phone"></i> Hotlines</a></li>
                 <li><a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a></li>
             </ul>
@@ -1045,7 +1241,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Building Resilience for Human Flourishing</h1>
+                <h1>Building Resilience to Enable Human Flourishing</h1>
                 <p>Find resources, support, and information to help navigate mental health challenges, build resilience, and prevent suicide. You are not alone.</p>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
                     <a href="#categories" class="hero-btn">
@@ -1059,7 +1255,31 @@
         </div>
     </section>
     
-    <!-- Categories Section - Now 8 items including Forgiveness & Reconciliation -->
+    <!-- About Us Section -->
+    <section class="about-us" id="about-us">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p><strong>The Tyson Hoopes Memorial Foundation</strong> was founded in 2024. The purpose was to create a Kindness Matters award to be given out each school year. This has been accomplished by establishing an endowed fund at the Wyoming Community Foundation through the generous support of many individuals and businesses.</p>
+                
+                <h3>Our Mission</h3>
+                <p>Our mission now is to provide resources for individuals who may be struggling with suicide ideation and hopelessness or battling heavy loss & grief. There is hope and healing available for all of us through the principles of human resiliency and flourishing and connection to each other and a higher purpose.</p>
+                
+                <p>Life is worth living even through the difficult parts. Everyone has value, everyone has purpose. We are all connected through our common humanity.</p>
+                
+                <h3>Our Vision</h3>
+                <p>We believe that resilience can be learned and cultivated. By sharing resources, stories, and support, we aim to help individuals discover their innate capacity to overcome adversity and find meaning in their journey.</p>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://venmo.com/u/TysonHoopesMemorial" target="_blank" class="hero-btn">
+                        <i class="fas fa-heart"></i> Support Our Mission
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section - Now 9 items with improved Jeffrey R. Holland quote -->
     <section class="categories" id="categories">
         <div class="container">
             <h2 class="section-title">Resources by Category</h2>
@@ -1159,6 +1379,19 @@
                         <div class="category-link">Click to View Books</div>
                     </div>
                 </div>
+                
+                <!-- UPDATED: Jeffrey R. Holland Quote Card - Now with Read More -->
+                <div class="quote-card" id="hollandQuoteCard">
+                    <div class="quote-content">
+                        "Whatever your struggle, —mental or emotional or physical or otherwise—do not vote against the preciousness of life by ending it! … Though we may feel we are 'like a broken vessel,' as the Psalmist says, we must remember, that vessel is in the hands of the divine potter..."
+                    </div>
+                    <div>
+                        <div class="quote-author">— Jeffrey R. Holland</div>
+                        <a href="#" class="read-more-btn" id="readHollandQuote">
+                            Read Full Quote <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1172,6 +1405,24 @@
             </div>
             <div class="modal-body" id="modalBody">
                 <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jeffrey R. Holland Quote Modal -->
+    <div id="hollandQuoteModal" class="resource-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Words of Hope & Encouragement</h3>
+                <button class="close-modal" id="closeHollandModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quote-full-content">
+                    <p>"Whatever your struggle, —mental or emotional or physical or otherwise—do not vote against the preciousness of life by ending it! … Though we may feel we are 'like a broken vessel,' as the Psalmist says, we must remember, that vessel is in the hands of the divine potter. Broken minds can be healed just the way broken bones and broken hearts are healed."</p>
+                    
+                    <p>"Whatever your concerns or difficulties, death by suicide is manifestly not the answer. … In a world that so desperately needs all the light it can get, please do not minimize the eternal light God put in your soul before this world was. Talk to someone. Ask for help. … You can bear the struggles of this mortal life because we will help you bear them. You are stronger than you think. Help is available, from others and especially from God. You are loved and valued and needed. We need you!"</p>
+                </div>
+                <div class="quote-author" style="text-align: center; margin-top: 2rem; font-size: 1.2rem;">— Jeffrey R. Holland</div>
             </div>
         </div>
     </div>
@@ -1227,32 +1478,39 @@
         </div>
     </section>
     
-    <!-- Featured Images Section -->
-    <section class="featured-images" id="images">
+    <!-- Featured Videos Section - UPDATED to include all 3 videos -->
+    <section class="featured-videos" id="featured-videos">
         <div class="container">
-            <h2 class="section-title">Visualizing Hope & Recovery</h2>
-            <div class="image-grid">
-                <div class="image-card">
-                    <img src="mindfulness.jpg" alt="Person practicing mindfulness meditation in a peaceful setting" class="featured-img">
-                    <div class="image-caption">
-                        <h3><i class="fas fa-spa" style="color: var(--secondary);"></i> Mindfulness in Practice</h3>
-                        <p>Finding peace and presence through mindfulness techniques that build emotional resilience.</p>
+            <h2 class="section-title">Educational Videos on Healing & Growth</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/PFsI6FO2gIc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <h3><i class="fas fa-heart" style="color: var(--secondary);"></i> The Journey of Grief Recovery</h3>
+                        <p>Understanding the grieving process and finding pathways to healing and recovery after loss.</p>
                     </div>
                 </div>
                 
-                <div class="image-card">
-                    <img src="support-community.jpg" alt="Community support group meeting together" class="featured-img">
-                    <div class="image-caption">
-                        <h3><i class="fas fa-users" style="color: var(--secondary);"></i> Community Support</h3>
-                        <p>Healing happens together. Support groups provide connection and understanding during difficult times.</p>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/khkJkR-ipfw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <h3><i class="fas fa-seedling" style="color: var(--secondary);"></i> Pathways to Human Flourishing</h3>
+                        <p>Exploring the science and practice of human flourishing and psychological well-being.</p>
                     </div>
                 </div>
                 
-                <div class="image-card">
-                    <img src="hope-recovery.jpg" alt="Symbol of hope and recovery with sunrise imagery" class="featured-img">
-                    <div class="image-caption">
-                        <h3><i class="fas fa-sun" style="color: var(--secondary);"></i> Pathway to Hope</h3>
-                        <p>Recovery and resilience are journeys that lead to renewed strength and purpose.</p>
+                <!-- RE-ADDED: Third video -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0cwtNOq_k4w" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <h3><i class="fas fa-hands-helping" style="color: var(--secondary);"></i> Building Resilience in Difficult Times</h3>
+                        <p>Practical strategies for developing resilience and finding strength during challenging life circumstances.</p>
                     </div>
                 </div>
             </div>
@@ -1302,61 +1560,74 @@
         </div>
     </section>
     
-    <!-- Lived Experiences Section -->
+    <!-- Lived Experiences Section - UPDATED with real story -->
     <section class="lived-experiences" id="lived-experiences">
         <div class="ribbon"></div>
         <div class="container">
             <div class="experience-container">
                 <div class="experience-card">
                     <div class="experience-header">
-                        <h2>Lived Experiences: John's Story</h2>
-                        <p class="experience-subtitle">A life lost too soon - understanding warning signs and the importance of intervention</p>
+                        <h2>Reflections by Jessica & Dusty</h2>
+                        <p class="experience-subtitle">A journey through grief, healing, and resilience after the loss of our son Tyson</p>
                     </div>
                     <div class="experience-content">
                         <div class="experience-section">
-                            <h3><i class="fas fa-user"></i> Who Was John Doe?</h3>
-                            <p>John was a 16-year-old high school sophomore from a suburban community. To most people, he seemed like a typical teenager - he played on the school soccer team, got decent grades, and had a small group of close friends. Outwardly, John appeared to be handling the pressures of adolescence well.</p>
-                            <p>But beneath the surface, John was struggling with intense feelings of isolation, academic pressure, and social anxiety that he kept hidden from everyone around him.</p>
+                            <h3><i class="fas fa-heart"></i> Reflections by Jessica</h3>
+                            <p><strong>On Dec 3, 2023, the unthinkable happened in our family. On that Sunday afternoon, we discovered that our 17 year old son Tyson, had died by suicide.</strong> His heart was technically still beating at that time, but both Dusty and I felt that he passed on that day. He was life-flighted up to Billings, MT, and we spent almost the entire week there in the ICU with him and watched and waited as the organ donation team worked to keep his body sustained until matches could be made and crews could come to retrieve the gift of his organs for others.</p>
+                        </div>
+                        
+                        <div class="reflection-box">
+                            <h4><i class="fas fa-heartbeat"></i> The First Nine Months</h4>
+                            <p>For the first nine months after Tyson died, I felt acute feelings of heavy grief everyday. I stopped wearing any eye makeup because it would be washed away. I felt mostly numb— shattered under the tsunami of all of the intense emotions that would arise from almost every encounter I had with life. How do I talk to my kids? How do I make dinner? How do I cope when I find Tyson's things scattered in our home? How do I smile at Tyson's friends? How do I smile at my friends? How do I muster the emotional bandwidth to respond to a text message? How do I wrestle with my unanswerable questions? How do I answer my kids' questions?</p>
                         </div>
                         
                         <div class="experience-section">
-                            <h3><i class="fas fa-exclamation-triangle"></i> The Warning Signs</h3>
-                            <p>In retrospect, there were several warning signs that family and friends later recognized:</p>
-                            <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
-                                <li style="margin-bottom: 0.5rem;">Withdrawal from friends and activities he once enjoyed</li>
-                                <li style="margin-bottom: 0.5rem;">Changes in sleep patterns - sleeping too much or too little</li>
-                                <li style="margin-bottom: 0.5rem;">Declining academic performance despite being capable</li>
-                                <li style="margin-bottom: 0.5rem;">Vague comments about "not being around much longer"</li>
-                                <li style="margin-bottom: 0.5rem;">Giving away prized possessions</li>
-                                <li>Increased irritability and mood swings</li>
-                            </ul>
+                            <h3><i class="fas fa-music"></i> Finding Comfort in Music & Meditation</h3>
+                            <p>From the initial moment of our trauma, I had to find things to comfort my soul. Sleep had a hard time finding me, and when it felt like my heart was literally being crushed under a heavy weight, the first thing I reached for was music- songs that had resonated with me from a young age. My mind could stop thinking, and my soul could connect. I do not mean this tritely when I say that music was a balm for my shrapnel wounded soul. As the months passed, and as my heart woke up, I also felt like playing the piano again, which has always been a source of stress relief for me.</p>
+                            
+                            <p>I started to meditate almost everyday. I run a hot bath and listen to a guided mediation, or just let my mind open and listen for any thoughts or feelings. This has been very calming for me, a way to let my tears flow and feel all the feelings. I have processed a lot of emotions this way, and it has been a good healing tool. Being outside in my garden has been a place for me to process my emotions as well.</p>
                         </div>
                         
-                        <div class="warning-box">
-                            <h4><i class="fas fa-skull-crossbones"></i> The Tragic Outcome</h4>
-                            <p>In March of last year, John died by suicide. His family was completely blindsided, having missed the subtle signs of his deep despair. Friends later recalled that John had made comments about feeling "overwhelmed" and "like a burden," but they didn't understand the seriousness of these statements at the time.</p>
-                            <p>The community was devastated. John's death left behind grieving parents, a younger sister who idolized him, friends struggling with guilt, and a school community questioning how this could have happened.</p>
+                        <div class="reflection-box">
+                            <h4><i class="fas fa-hands-helping"></i> The Power of Gratitude</h4>
+                            <p>One thing I did early on was do a deliberate gratitude practice. I was experiencing something I never would have chosen, but I still had so much good in my life. For example, I could feed my children and put them in a safe place each night- which many mothers cannot do around the world, and so on and so on. I let myself feel the feelings of despair- I didn't push them down, but then I would finish by remembering how good my life still was. I cannot explain how much good this has done for me. There is always something to be grateful for.</p>
                         </div>
                         
                         <div class="experience-section">
-                            <h3><i class="fas fa-heart"></i> What We Can Learn</h3>
-                            <p>John's story highlights several critical lessons about suicide prevention:</p>
-                            <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
-                                <li style="margin-bottom: 0.5rem;"><strong>Depression doesn't always look like sadness</strong> - Sometimes it manifests as irritability, withdrawal, or changes in behavior</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Take all statements about suicide seriously</strong> - Even vague comments should be addressed</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Asking directly saves lives</strong> - Research shows asking someone if they're considering suicide does NOT increase risk</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Connect before you correct</strong> - Listen without judgment before offering solutions</li>
-                                <li><strong>Follow up matters</strong> - Continued support is crucial even after immediate crisis passes</li>
-                            </ul>
+                            <h3><i class="fas fa-spa"></i> Spiritual Connections & Hope</h3>
+                            <p>I would be remiss to not mention one big thing that has comforted Dusty and I immensely. I have felt hesitant to share this— but we do believe that God has given people the spiritual gift to connect in different ways to the Spirit World. We took the opportunity to visit with a few different people, who connected with Tyson and we were able to receive such comfort from these visits. What was shared was sacred to us, and at no time did we feel that it was anything other than a gift to us from God.</p>
+                            
+                            <p>Through all of this, in my grief, I am reminded of a quote from one of my favorite authors- "happiness can be found, in the darkest of times, if one only remembers to turn on the light." All these things I have done or that have been given to me have helped me turn on the light. These moments have given me hope.</p>
+                        </div>
+                        
+                        <div class="experience-section">
+                            <h3><i class="fas fa-user"></i> Reflections by Dusty</h3>
+                            <p>At some point after gathering together with our family in the hospital room shortly after the incident, I said a prayer, that essentially said, we are hurt, our hearts are broken, and we need comfort and peace. The prayer was answered as the spirit of peace in the room was incredibly strong and overpowering. That room became a sacred place to us because of how we felt.</p>
+                            
+                            <p>We know that Tyson regrets his decision, that he loves us and wants to live with us again. This gives us hope for a reunion in the future, we know his spirit or essence lives on and he is with us.</p>
+                        </div>
+                        
+                        <div class="reflection-box">
+                            <h4><i class="fas fa-paint-brush"></i> The Kintsugi Analogy</h4>
+                            <p>A kind friend gave our family a picture that was in the style of Kintsugi. Kintsugi, meaning "golden repair" in Japanese, is an art form and philosophy that emphasizes the beauty of imperfection and the power of resilience. It involves repairing broken pottery with lacquer and gold, highlighting the cracks and fractures rather than hiding them. This practice is a reflection of the Japanese philosophy of wabi-sabi, which embraces transience and imperfection. It teaches us that even when we think we are broken, we can be put back together in a beautiful way.</p>
+                        </div>
+                        
+                        <div class="experience-section">
+                            <h3><i class="fas fa-hands"></i> Finding Strength & Forgiveness</h3>
+                            <p>I have found strength to continue on through journaling. I have written pages and pages of letters to Tyson. It has been profoundly healing.</p>
+                            
+                            <p>I believe that because of Christ, mortals can forgive those who have moved on to the next life. That is what I am working on, and I've made great progress forgiving my son, I love him, I can't wait to see him again, and even though I was profoundly hurt by his action, I am not his judge, I don't know the full circumstances of what he was going through. I just know I am commanded to release any anger or resentment, and to express forgiveness to him.</p>
+                            
+                            <p>The records of our lives will surely at some point include a story where we needed to be forgiven and times when we needed to forgive. This topic is so universal, so fundamental, foundational, and crucial to the growth of our souls. I've learned there are things that happen in life that we won't ever be able to forget. But forgetting is not a requirement of forgiving. Forgiveness has a transformative power, it's a connection to a higher power that enables you to overcome negative emotions and embrace healing and reconciliation. Forgiveness heals terrible and tragic wounds, it is made possible because of the Atonement of Jesus Christ.</p>
                         </div>
                         
                         <div class="takeaway-box">
-                            <h4><i class="fas fa-hands-helping"></i> How John's Story Can Help Others</h4>
-                            <p>John's family has chosen to share his story to help prevent other families from experiencing similar tragedy. They emphasize:</p>
-                            <p><strong>1. Education is prevention</strong> - Knowing warning signs and how to respond can save lives.</p>
-                            <p><strong>2. Reduce stigma</strong> - Mental health challenges should be discussed as openly as physical health issues.</p>
-                            <p><strong>3. Resources work</strong> - The 988 lifeline and other crisis services are effective when utilized.</p>
-                            <p><strong>4. Community matters</strong> - Building supportive environments where people feel safe to share struggles is essential.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Final Thoughts</h4>
+                            <p>Even in the face of profound suffering, forgiveness, healing, and connection, can lead to a bright future. One of my big regrets is not telling Tyson how much he meant to me. Learn from me. Hug your children, children hug your parents and hold on to them as long as you need. This life is not the end of our existence, choices matter and family relationships matter even if you have a loved one that has passed on.</p>
+                            
+                            <p style="margin-top: 1rem; font-style: italic;">I came across this thought early on in my grief journey- "People speak of hope as if it is this delicate, ephemeral thing made of whispers and spiders webs. It's not. Hope has dirt on her face, blood on her knuckles, the grit of the cobblestones in her hair, and just spat out a tooth as she rises for another go."</p>
+                            
+                            <p style="margin-top: 1rem;">My grief has felt like this. Each day has been a private battle- and sometimes I end up with symbolic grit in my hair and a dirty face as I fight to keep my hope alive. My daughter Hazel, who was 7 at the time, wrote me this note soon after Tyson died- which I keep in my kitchen - "the loss of a child is hard work, but there is no need to give up." She is a wise child.</p>
                         </div>
                         
                         <div style="text-align: center; margin-top: 2rem;">
@@ -1367,7 +1638,7 @@
                             <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light-teal); border-radius: 10px;">
                                 <h3 style="color: var(--primary); margin-bottom: 1rem;">Share Your Story</h3>
                                 <p>Your lived experiences can help others feel less alone and more understood. If you'd like to share your story of resilience, recovery, or loss to help others, we'd be honored to hear from you.</p>
-                                <a href="mailto:stories@humanresilience.org?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
+                                <a href="mailto:stories@humanresilience.us?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
                                     Do you want to share your story? Click here <i class="fas fa-paper-plane"></i>
                                 </a>
                                 <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
@@ -1376,7 +1647,7 @@
                             </div>
                             
                             <p style="margin-top: 2rem; font-style: italic; color: var(--gray);">
-                                If you or someone you know is struggling, please reach out. John's story reminds us that help is available and recovery is possible.
+                                If you or someone you know is struggling, please reach out. Jessica and Dusty's story reminds us that help is available and recovery is possible.
                             </p>
                         </div>
                     </div>
@@ -1391,7 +1662,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Human Resilience</h3>
-                    <p>Providing evidence-based resources for mental wellness, suicide prevention, and resilience building to help individuals and communities thrive.</p>
+                    <p>Our mission is to help you realize that you have the ability to overcome devastating tragedies or difficult circumstances and live a meaningful life. You matter, be kind to yourself.</p>
                     <div style="margin-top: 15px;">
                         <a href="#home" class="hero-btn" style="padding: 10px 20px; font-size: 0.9rem;">
                             <i class="fas fa-arrow-up"></i> Back to Top
@@ -1403,8 +1674,10 @@
                     <h3>Quick Links</h3>
                     <div class="footer-links">
                         <a href="#home"><i class="fas fa-home"></i> Home</a>
+                        <a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a>
                         <a href="#categories"><i class="fas fa-list"></i> Resource Categories</a>
                         <a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a>
+                        <a href="#featured-videos"><i class="fas fa-video"></i> Videos</a>
                         <a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a>
                     </div>
                 </div>
@@ -1412,18 +1685,18 @@
                 <div class="footer-section">
                     <h3>Contact & Support</h3>
                     <div class="footer-links">
-                        <a href="mailto:info@humanresilience.org"><i class="fas fa-envelope"></i> info@humanresilience.org</a>
-                        <a href="mailto:stories@humanresilience.org"><i class="fas fa-comment"></i> Share Your Story</a>
-                        <a href="mailto:therapy@humanresilience.org"><i class="fas fa-couch"></i> Therapy Resources</a>
-                        <a href="#disclaimer"><i class="fas fa-exclamation-circle"></i> Disclaimer</a>
+                        <a href="mailto:info@humanresilience.us"><i class="fas fa-envelope"></i> info@humanresilience.us</a>
+                        <a href="mailto:stories@humanresilience.us"><i class="fas fa-comment"></i> Share Your Story</a>
+                        <a href="mailto:therapy@humanresilience.us"><i class="fas fa-couch"></i> Therapy Resources</a>
+                        <a href="https://venmo.com/u/TysonHoopesMemorial" target="_blank"><i class="fas fa-heart"></i> Donate via Venmo</a>
                     </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Human Resilience. This site is for informational purposes only and is not a substitute for professional medical advice.</p>
+                <p>&copy; 2024 Human Resilience - Tyson Hoopes Memorial Foundation. This site is for informational purposes only and is not a substitute for professional medical advice.</p>
                 <p>If you are in crisis, please call 988 or go to your nearest emergency room.</p>
-                <p style="margin-top: 1rem; font-style: italic;">In memory of John Doe and all those lost to suicide - your stories inspire us to work for change.</p>
+                <p style="margin-top: 1rem; font-style: italic;">In memory of Tyson Hoopes and all those lost to suicide - your stories inspire us to work for change.</p>
             </div>
         </div>
     </footer>
@@ -1445,7 +1718,10 @@
                     {name: "Everytown Research - Suicide Prevention Laws", url: "https://everytownresearch.org/two-decades-of-suicide-prevention-laws-lessons-from-national-leaders-in-gun-safety-policy/"},
                     {name: "Harvard Means Matter", url: "https://hsph.harvard.edu/research/means-matter/"},
                     {name: "Zero Suicide", url: "https://zerosuicide.edc.org/"},
-                    {name: "Sources of Strength", url: "https://sourcesofstrength.org/"}
+                    {name: "Sources of Strength", url: "https://sourcesofstrength.org/"},
+                    // ADDED: New suicide prevention websites
+                    {name: "LiveOn Utah", url: "https://liveonutah.org/"},
+                    {name: "Wyoming We Care", url: "https://wygovmentalhealth.wyo.gov/wy-we-care"}
                 ]
             },
             mental: {
@@ -1492,8 +1768,10 @@
                     {name: "Online Hypnotherapy Clinic", url: "https://www.onlinehypnotherapyclinic.com/self-hypnosis-relaxation-techniques.html"},
                     {name: "Oxbow Center Wyoming", url: "https://www.oxbowcenterwy.org/"},
                     {name: "Family Circle Counseling", url: "https://familycirclecounseling.com/"},
-                    {name: "Danielle Warren Therapy", url: "https://danielle-warren.clientsecure.me/"},
-                    {name: "Laramie Behavioral Mental Health", url: "https://www.lbmacp.org/"}
+                    // CHANGED: Danielle Warren Therapy to Innerpeace Counseling
+                    {name: "Innerpeace Counseling", url: "https://danielle-warren.clientsecure.me/"},
+                    // UPDATED: Description changed for Laramie Behavioral Mental Health
+                    {name: "Luke Bell Memorial Affordable Counseling", url: "https://www.lbmacp.org/"}
                 ]
             },
             grief: {
@@ -1505,7 +1783,9 @@
                     {name: "Grief.com", url: "https://grief.com/"},
                     {name: "Forever Family Foundation", url: "https://foreverfamilyfoundation.org/"},
                     {name: "Laura Lynne Jackson", url: "https://lauralynnejackson.com/"},
-                    {name: "Good Grief", url: "https://good-grief.org/"}
+                    {name: "Good Grief", url: "https://good-grief.org/"},
+                    // ADDED: Alliance of Hope
+                    {name: "Alliance of Hope", url: "https://allianceofhope.org/"}
                 ]
             },
             forgiveness: {
@@ -1521,7 +1801,6 @@
             books: {
                 title: "Helpful Books on Resilience, Grief & Healing",
                 books: [
-                    // UPDATED: Books now include links and only include books with links provided
                     {name: "The Light After Death - Vincent Todd Tolman", url: "https://thelightafterdeath.com/"},
                     {name: "Aftermath - Gary Roe", url: "https://www.garyroe.com/aftermath/"},
                     {name: "What's On the Other Side - Brent L. Top", url: "https://www.amazon.com/Whats-Other-Side-Gospel-Teaches/dp/1609070461"},
@@ -1600,6 +1879,12 @@
         const modalBody = document.getElementById('modalBody');
         const closeModal = document.getElementById('closeModal');
         
+        // Jeffrey R. Holland Quote Modal
+        const hollandQuoteModal = document.getElementById('hollandQuoteModal');
+        const closeHollandModal = document.getElementById('closeHollandModal');
+        const readHollandQuote = document.getElementById('readHollandQuote');
+        const hollandQuoteCard = document.getElementById('hollandQuoteCard');
+        
         // Open modal when category card is clicked
         document.querySelectorAll('.category-card').forEach(card => {
             card.addEventListener('click', function() {
@@ -1614,15 +1899,36 @@
             openResourceModal('therapy');
         });
         
-        // Close modal when X is clicked
+        // Open Jeffrey R. Holland quote modal
+        readHollandQuote.addEventListener('click', function(e) {
+            e.preventDefault();
+            hollandQuoteModal.style.display = 'block';
+        });
+        
+        // Also make the entire quote card clickable
+        hollandQuoteCard.addEventListener('click', function(e) {
+            // Only open if not clicking on the read more link itself
+            if (!e.target.closest('.read-more-btn')) {
+                hollandQuoteModal.style.display = 'block';
+            }
+        });
+        
+        // Close modals when X is clicked
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
         });
         
-        // Close modal when clicking outside
+        closeHollandModal.addEventListener('click', () => {
+            hollandQuoteModal.style.display = 'none';
+        });
+        
+        // Close modals when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
+            }
+            if (e.target === hollandQuoteModal) {
+                hollandQuoteModal.style.display = 'none';
             }
         });
         
@@ -1634,7 +1940,7 @@
             modalBody.innerHTML = '';
             
             if (category === 'books') {
-                // UPDATED: Display books with clickable links
+                // Display books with clickable links
                 const resourcesGrid = document.createElement('div');
                 resourcesGrid.className = 'resource-links';
                 
