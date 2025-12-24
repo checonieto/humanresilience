@@ -156,7 +156,7 @@
             font-style: italic;
         }
         
-        /* Navigation */
+        /* Navigation - UPDATED: Removed icons */
         nav {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -625,7 +625,7 @@
             margin-bottom: 1.2rem;
         }
         
-        /* Videos Section - UPDATED to include all 3 videos */
+        /* Videos Section - UPDATED: Swapped the first two videos */
         .featured-videos {
             padding: 3rem 0;
             background-color: var(--light-teal);
@@ -1213,10 +1213,9 @@
         </div>
     </header>
     
-    <!-- Navigation -->
+    <!-- Navigation - UPDATED: Removed icons -->
     <nav>
         <div class="container nav-container">
-            <!-- CHANGED: Removed icon and replaced with semi-colon.jpg -->
             <div class="logo" style="font-size: 1.5rem; color: var(--primary);">
                 <img src="semi-colon.jpg" alt="Semi-colon symbol" style="height: 24px; margin-right: 10px; vertical-align: middle;"> Human Resilience
             </div>
@@ -1226,13 +1225,13 @@
             </button>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="#categories"><i class="fas fa-list"></i> Resources</a></li>
-                <li><a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a></li>
-                <li><a href="#featured-videos"><i class="fas fa-video"></i> Videos</a></li>
-                <li><a href="#resources"><i class="fas fa-phone"></i> Hotlines</a></li>
-                <li><a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#categories">Resources</a></li>
+                <li><a href="#therapy-resources">Therapy</a></li>
+                <li><a href="#featured-videos">Videos</a></li>
+                <li><a href="#resources">Hotlines</a></li>
+                <li><a href="#lived-experiences">Lived Experiences</a></li>
             </ul>
         </div>
     </nav>
@@ -1478,21 +1477,12 @@
         </div>
     </section>
     
-    <!-- Featured Videos Section - UPDATED to include all 3 videos -->
+    <!-- Featured Videos Section - UPDATED: Swapped the first two videos -->
     <section class="featured-videos" id="featured-videos">
         <div class="container">
             <h2 class="section-title">Educational Videos on Healing & Growth</h2>
             <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/PFsI6FO2gIc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-caption">
-                        <h3><i class="fas fa-heart" style="color: var(--secondary);"></i> The Journey of Grief Recovery</h3>
-                        <p>Understanding the grieving process and finding pathways to healing and recovery after loss.</p>
-                    </div>
-                </div>
-                
+                <!-- UPDATED: Swapped - Now Pathways to Human Flourishing first -->
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/khkJkR-ipfw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1503,7 +1493,18 @@
                     </div>
                 </div>
                 
-                <!-- RE-ADDED: Third video -->
+                <!-- UPDATED: Swapped - Now The Journey of Grief Recovery second -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/PFsI6FO2gIc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <h3><i class="fas fa-heart" style="color: var(--secondary);"></i> The Journey of Grief Recovery</h3>
+                        <p>Understanding the grieving process and finding pathways to healing and recovery after loss.</p>
+                    </div>
+                </div>
+                
+                <!-- Third video remains the same -->
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/0cwtNOq_k4w" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1638,7 +1639,8 @@
                             <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light-teal); border-radius: 10px;">
                                 <h3 style="color: var(--primary); margin-bottom: 1rem;">Share Your Story</h3>
                                 <p>Your lived experiences can help others feel less alone and more understood. If you'd like to share your story of resilience, recovery, or loss to help others, we'd be honored to hear from you.</p>
-                                <a href="mailto:stories@humanresilience.us?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
+                                <!-- UPDATED: Changed email to info@humanresilience.us -->
+                                <a href="mailto:info@humanresilience.us?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
                                     Do you want to share your story? Click here <i class="fas fa-paper-plane"></i>
                                 </a>
                                 <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
@@ -1673,12 +1675,12 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <div class="footer-links">
-                        <a href="#home"><i class="fas fa-home"></i> Home</a>
-                        <a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a>
-                        <a href="#categories"><i class="fas fa-list"></i> Resource Categories</a>
-                        <a href="#therapy-resources"><i class="fas fa-couch"></i> Therapy</a>
-                        <a href="#featured-videos"><i class="fas fa-video"></i> Videos</a>
-                        <a href="#lived-experiences"><i class="fas fa-book"></i> Lived Experiences</a>
+                        <a href="#home">Home</a>
+                        <a href="#about-us">About Us</a>
+                        <a href="#categories">Resource Categories</a>
+                        <a href="#therapy-resources">Therapy</a>
+                        <a href="#featured-videos">Videos</a>
+                        <a href="#lived-experiences">Lived Experiences</a>
                     </div>
                 </div>
                 
