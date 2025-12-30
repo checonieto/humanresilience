@@ -80,43 +80,11 @@
             100% { box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); }
         }
         
-        /* Donate Button Styles */
-        .donate-container {
-            position: fixed;
-            top: 85px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .donate-btn {
-            background-color: var(--success);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .donate-btn:hover {
-            background-color: #0da577;
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.6);
-        }
-        
-        .donate-btn i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-        
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary), #8b5cf6);
             color: white;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -134,7 +102,7 @@
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* LARGER font for header */
             font-weight: 700;
             margin-bottom: 0.5rem;
             display: flex;
@@ -153,7 +121,7 @@
             max-width: 900px;
             margin: 0 auto;
             line-height: 1.6;
-            font-style: italic;
+            font-style: normal;
         }
         
         /* Navigation - UPDATED: Removed icons */
@@ -229,19 +197,25 @@
             max-width: 800px;
             z-index: 2;
             position: relative;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 2.2rem; /* SMALLER font for hero section */
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
         
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin: 0 auto 2.5rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
             line-height: 1.8;
+            text-align: center;
+            font-style: normal;
         }
         
         .hero-btn {
@@ -677,22 +651,22 @@
             font-size: 1.3rem;
         }
         
-        /* Therapy Resources Section - More Prominent */
-        .therapy-resources {
+        /* NEW: Resiliency Quotes Section - Replaces Therapy Resources */
+        .resiliency-quotes {
             padding: 4rem 0;
             background: linear-gradient(135deg, var(--primary), #7c3aed);
             color: white;
         }
         
-        .therapy-resources .section-title {
+        .resiliency-quotes .section-title {
             color: white;
         }
         
-        .therapy-resources .section-title::after {
+        .resiliency-quotes .section-title::after {
             background: linear-gradient(to right, white, var(--light-teal));
         }
         
-        .therapy-highlight {
+        .quotes-intro {
             max-width: 800px;
             margin: 0 auto 3rem;
             text-align: center;
@@ -700,69 +674,52 @@
             line-height: 1.8;
         }
         
-        .therapy-types {
+        .quotes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
         
-        .therapy-type-card {
+        .quote-item {
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 10px;
             padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
-        .therapy-type-card:hover {
+        .quote-item:hover {
             transform: translateY(-5px);
             background-color: rgba(255, 255, 255, 0.15);
         }
         
-        .therapy-type-card h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
+        .quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            font-size: 1.1rem;
         }
         
-        .therapy-type-card h3 i {
-            margin-right: 10px;
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
             color: var(--light-teal);
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
         }
         
-        .therapy-type-card p {
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .therapy-features {
-            list-style: none;
-            margin-top: 1rem;
-        }
-        
-        .therapy-features li {
-            padding: 0.3rem 0;
-            display: flex;
-            align-items: flex-start;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .therapy-features li i {
-            color: var(--light-teal);
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-        
-        .therapy-action {
+        .quotes-action {
             text-align: center;
             margin-top: 2rem;
         }
         
-        .therapy-action-btn {
+        .quotes-action-btn {
             background-color: white;
             color: var(--primary);
             padding: 15px 30px;
@@ -776,18 +733,18 @@
             font-size: 1.1rem;
         }
         
-        .therapy-action-btn:hover {
+        .quotes-action-btn:hover {
             background-color: var(--light-teal);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
         
-        .therapy-action-btn i {
+        .quotes-action-btn i {
             margin-left: 10px;
             transition: transform 0.3s ease;
         }
         
-        .therapy-action-btn:hover i {
+        .quotes-action-btn:hover i {
             transform: translateX(5px);
         }
         
@@ -1071,12 +1028,16 @@
                 background-attachment: scroll;
             }
             
+            .logo {
+                font-size: 2rem; /* Larger for mobile header */
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem; /* Smaller for mobile hero */
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             /* Emergency button moved for mobile to avoid hamburger menu */
@@ -1085,12 +1046,7 @@
                 right: 15px;
             }
             
-            .donate-container {
-                top: 80px;
-                left: 15px;
-            }
-            
-            .emergency-btn, .donate-btn {
+            .emergency-btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
             }
@@ -1117,7 +1073,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .therapy-types {
+            .quotes-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1131,16 +1087,16 @@
         }
         
         @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem; /* Larger for small mobile header */
+            }
+            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.6rem; /* Smaller for small mobile hero */
             }
             
             .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .logo {
-                font-size: 2rem;
+                font-size: 1rem;
             }
             
             .section-title {
@@ -1156,18 +1112,13 @@
                 right: 10px;
             }
             
-            .donate-container {
-                top: 75px;
-                left: 10px;
-            }
-            
             .tagline {
                 font-size: 1rem;
             }
         }
         
         @media (max-width: 380px) {
-            .emergency-container, .donate-container {
+            .emergency-container {
                 position: fixed;
                 bottom: 20px;
                 top: auto;
@@ -1176,13 +1127,9 @@
                 text-align: center;
             }
             
-            .emergency-btn, .donate-btn {
+            .emergency-btn {
                 justify-content: center;
                 width: 100%;
-            }
-            
-            .donate-container {
-                bottom: 80px;
             }
         }
     </style>
@@ -1192,13 +1139,6 @@
     <div class="emergency-container">
         <a href="tel:988" class="emergency-btn">
             <i class="fas fa-phone-alt"></i> 988 Suicide & Crisis Lifeline
-        </a>
-    </div>
-    
-    <!-- Donate Button -->
-    <div class="donate-container">
-        <a href="https://venmo.com/u/TysonHoopesMemorial" target="_blank" class="donate-btn">
-            <i class="fas fa-heart"></i> Donate
         </a>
     </div>
     
@@ -1228,7 +1168,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#categories">Resources</a></li>
-                <li><a href="#therapy-resources">Therapy</a></li>
+                <li><a href="#resiliency-quotes">Quotes</a></li>
                 <li><a href="#featured-videos">Videos</a></li>
                 <li><a href="#resources">Hotlines</a></li>
                 <li><a href="#lived-experiences">Lived Experiences</a></li>
@@ -1236,20 +1176,15 @@
         </div>
     </nav>
     
-    <!-- Hero Section with Background Image -->
+    <!-- Hero Section with Background Image - REMOVED container wrapper -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Building Resilience to Enable Human Flourishing</h1>
-                <p>Find resources, support, and information to help navigate mental health challenges, build resilience, and prevent suicide. You are not alone.</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-                    <a href="#categories" class="hero-btn">
-                        Explore Resources <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#therapy-resources" class="hero-btn" style="background-color: rgba(255,255,255,0.9); color: var(--primary);">
-                        Find Therapy Resources <i class="fas fa-couch"></i>
-                    </a>
-                </div>
+        <div class="hero-content">
+            <h1>Building Resilience to Enable Human Flourishing</h1>
+            <p>Find resources, support, and information to help navigate mental health challenges, build resilience, and prevent suicide. You are not alone.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <a href="#categories" class="hero-btn">
+                    Explore Resources <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1426,56 +1361,106 @@
         </div>
     </div>
     
-    <!-- Therapy Resources Section - More Prominent -->
-    <section class="therapy-resources" id="therapy-resources">
+    <!-- NEW: Resiliency Quotes Section - Replaces Therapy Resources -->
+    <section class="resiliency-quotes" id="resiliency-quotes">
         <div class="container">
-            <h2 class="section-title">Therapy Resources</h2>
-            <p class="therapy-highlight">
-                Professional therapy can be a powerful tool for mental wellness. Explore different approaches to find what works best for you.
+            <h2 class="section-title">Resiliency Quotes</h2>
+            <p class="quotes-intro">
+                Inspiring quotes from people can move us to hold on a little longer, to face our challenges head on, to keep going forward with purpose.
             </p>
             
-            <div class="therapy-types">
-                <div class="therapy-type-card">
-                    <h3><i class="fas fa-user-md"></i> Individual Therapy</h3>
-                    <p>One-on-one sessions with a licensed therapist to address personal challenges, develop coping strategies, and work toward mental wellness goals.</p>
-                    <ul class="therapy-features">
-                        <li><i class="fas fa-check-circle"></i> Personalized attention</li>
-                        <li><i class="fas fa-check-circle"></i> Confidential setting</li>
-                        <li><i class="fas fa-check-circle"></i> Tailored treatment plans</li>
-                        <li><i class="fas fa-check-circle"></i> Various approaches (CBT, DBT, psychodynamic)</li>
-                    </ul>
+            <div class="quotes-grid">
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "Resilience is very different than being numb. Resilience means you experience, you feel, you fail, you hurt. You fall. But, you keep going."
+                    </div>
+                    <div class="quote-author">— Yasmin Mogahed</div>
                 </div>
                 
-                <div class="therapy-type-card">
-                    <h3><i class="fas fa-users"></i> Group Therapy</h3>
-                    <p>Therapeutic sessions with multiple participants facilitated by a professional, offering peer support and shared learning experiences.</p>
-                    <ul class="therapy-features">
-                        <li><i class="fas fa-check-circle"></i> Peer support and validation</li>
-                        <li><i class="fas fa-check-circle"></i> Reduced feelings of isolation</li>
-                        <li><i class="fas fa-check-circle"></i> Often more affordable</li>
-                        <li><i class="fas fa-check-circle"></i> Learn from others' experiences</li>
-                    </ul>
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "We all have battles to fight. And it's often in those battles that we are most alive: it's on the frontlines of our lives that we earn wisdom, create joy, forge friendships, discover happiness, find love, and do purposeful work."
+                    </div>
+                    <div class="quote-author">— Eric Greitens, Resilience</div>
                 </div>
                 
-                <div class="therapy-type-card">
-                    <h3><i class="fas fa-laptop-medical"></i> Online & Teletherapy</h3>
-                    <p>Virtual therapy sessions that provide convenient access to mental health professionals from anywhere with an internet connection.</p>
-                    <ul class="therapy-features">
-                        <li><i class="fas fa-check-circle"></i> Access from home</li>
-                        <li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
-                        <li><i class="fas fa-check-circle"></i> Geographic barriers removed</li>
-                        <li><i class="fas fa-check-circle"></i> Various platforms available</li>
-                    </ul>
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "Life doesn't get easier or more forgiving, we get stronger and more resilient."
+                    </div>
+                    <div class="quote-author">— Steve Maraboli, Life, the Truth, and Being Free</div>
+                </div>
+                
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "Persistence and resilience only come from having been given the chance to work through difficult problems."
+                    </div>
+                    <div class="quote-author">— Gever Tulley</div>
+                </div>
+                
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "You may have to fight a battle more than once to win it."
+                    </div>
+                    <div class="quote-author">— Margaret Thatcher</div>
+                </div>
+                
+                <div class="quote-item">
+                    <div class="quote-text">
+                        "It's your reaction to adversity, not adversity itself that determines how your life's story will develop."
+                    </div>
+                    <div class="quote-author">— Dieter F. Uchtdorf</div>
                 </div>
             </div>
             
-            <div class="therapy-action">
-                <a href="#categories" class="therapy-action-btn" data-category="therapy">
-                    <i class="fas fa-external-link-alt"></i> View All Therapy Resources
+            <div class="quotes-action">
+                <a href="#" class="quotes-action-btn" id="viewMoreQuotes">
+                    <i class="fas fa-book-open"></i> View Additional Quotes
                 </a>
             </div>
         </div>
     </section>
+    
+    <!-- Additional Quotes Modal -->
+    <div id="moreQuotesModal" class="resource-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>More Resiliency Quotes</h3>
+                <button class="close-modal" id="closeQuotesModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quotes-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
+                    <div class="quote-item" style="background-color: var(--light); border: 1px solid var(--light-gray); color: var(--dark);">
+                        <div class="quote-text">
+                            "No matter how bleak or menacing a situation may appear, it does not entirely own us. It can't take away our freedom to respond, our power to take action."
+                        </div>
+                        <div class="quote-author" style="color: var(--secondary);">— Ryder Carroll</div>
+                    </div>
+                    
+                    <div class="quote-item" style="background-color: var(--light); border: 1px solid var(--light-gray); color: var(--dark);">
+                        <div class="quote-text">
+                            "Although the world is full of suffering, it is also full of the overcoming of it."
+                        </div>
+                        <div class="quote-author" style="color: var(--secondary);">— Helen Keller</div>
+                    </div>
+                    
+                    <div class="quote-item" style="background-color: var(--light); border: 1px solid var(--light-gray); color: var(--dark);">
+                        <div class="quote-text">
+                            "I can be changed by what happens to me. But I refuse to be reduced by it."
+                        </div>
+                        <div class="quote-author" style="color: var(--secondary);">— Maya Angelou</div>
+                    </div>
+                    
+                    <div class="quote-item" style="background-color: var(--light); border: 1px solid var(--light-gray); color: var(--dark);">
+                        <div class="quote-text">
+                            "When we learn how to become resilient, we learn how to embrace the beautifully broad spectrum of the human experience."
+                        </div>
+                        <div class="quote-author" style="color: var(--secondary);">— Jaeda Dewalt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Featured Videos Section - UPDATED: Swapped the first two videos -->
     <section class="featured-videos" id="featured-videos">
@@ -1678,7 +1663,7 @@
                         <a href="#home">Home</a>
                         <a href="#about-us">About Us</a>
                         <a href="#categories">Resource Categories</a>
-                        <a href="#therapy-resources">Therapy</a>
+                        <a href="#resiliency-quotes">Resiliency Quotes</a>
                         <a href="#featured-videos">Videos</a>
                         <a href="#lived-experiences">Lived Experiences</a>
                     </div>
@@ -1886,18 +1871,17 @@
         const readHollandQuote = document.getElementById('readHollandQuote');
         const hollandQuoteCard = document.getElementById('hollandQuoteCard');
         
+        // More Quotes Modal
+        const moreQuotesModal = document.getElementById('moreQuotesModal');
+        const closeQuotesModal = document.getElementById('closeQuotesModal');
+        const viewMoreQuotes = document.getElementById('viewMoreQuotes');
+        
         // Open modal when category card is clicked
         document.querySelectorAll('.category-card').forEach(card => {
             card.addEventListener('click', function() {
                 const category = this.getAttribute('data-category');
                 openResourceModal(category);
             });
-        });
-        
-        // Open therapy modal when button is clicked
-        document.querySelector('.therapy-action-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            openResourceModal('therapy');
         });
         
         // Open Jeffrey R. Holland quote modal
@@ -1914,6 +1898,12 @@
             }
         });
         
+        // Open More Quotes modal
+        viewMoreQuotes.addEventListener('click', function(e) {
+            e.preventDefault();
+            moreQuotesModal.style.display = 'block';
+        });
+        
         // Close modals when X is clicked
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
@@ -1923,6 +1913,10 @@
             hollandQuoteModal.style.display = 'none';
         });
         
+        closeQuotesModal.addEventListener('click', () => {
+            moreQuotesModal.style.display = 'none';
+        });
+        
         // Close modals when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -1930,6 +1924,9 @@
             }
             if (e.target === hollandQuoteModal) {
                 hollandQuoteModal.style.display = 'none';
+            }
+            if (e.target === moreQuotesModal) {
+                moreQuotesModal.style.display = 'none';
             }
         });
         
