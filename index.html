@@ -97,6 +97,7 @@
         
         .nav-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
@@ -106,6 +107,8 @@
             display: flex;
             list-style: none;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .nav-links li {
@@ -119,6 +122,8 @@
             color: var(--dark);
             font-weight: 500;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            word-break: keep-all;
         }
         
         .nav-links a:hover {
@@ -1136,11 +1141,6 @@
                 <li><a href="#featured-videos">Videos</a></li>
                 <li><a href="#resources">Hotlines</a></li>
                 <li><a href="#lived-experiences">Lived Experiences</a></li>
-                <li>
-                    <a href="tel:988" class="nav-988-btn">
-                        <i class="fas fa-phone-alt"></i> 988 Crisis Line
-                    </a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -1516,101 +1516,129 @@
     </section>
     
     <!-- Lived Experiences Section - UPDATED with real story -->
-    <section class="lived-experiences" id="lived-experiences">
-        <div class="ribbon"></div>
-        <div class="container">
-            <div class="experience-container">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h2>Reflections by Jessica & Dusty</h2>
-                        <p class="experience-subtitle">A journey through grief, healing, and resilience after the loss of our son Tyson</p>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-section">
-                            <h3><i class="fas fa-heart"></i> Reflections by Jessica</h3>
-                            <p><strong>On Dec 3, 2023, the unthinkable happened in our family. On that Sunday afternoon, we discovered that our 17 year old son Tyson, had died by suicide.</strong> His heart was technically still beating at that time, but both Dusty and I felt that he passed on that day. He was life-flighted up to Billings, MT, and we spent almost the entire week there in the ICU with him and watched and waited as the organ donation team worked to keep his body sustained until matches could be made and crews could come to retrieve the gift of his organs for others.</p>
+        <!-- Lived Experiences Section - UPDATED with complete story -->
+        <section class="lived-experiences" id="lived-experiences">
+            <div class="ribbon"></div>
+            <div class="container">
+                <div class="experience-container">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <h2>Reflections by Jessica & Dusty</h2>
+                            <p class="experience-subtitle">A journey through grief, healing, and resilience after the loss of our son Tyson</p>
                         </div>
-                        
-                        <div class="reflection-box">
-                            <h4><i class="fas fa-heartbeat"></i> The First Nine Months</h4>
-                            <p>For the first nine months after Tyson died, I felt acute feelings of heavy grief everyday. I stopped wearing any eye makeup because it would be washed away. I felt mostly numb— shattered under the tsunami of all of the intense emotions that would arise from almost every encounter I had with life. How do I talk to my kids? How do I make dinner? How do I cope when I find Tyson's things scattered in our home? How do I smile at Tyson's friends? How do I smile at my friends? How do I muster the emotional bandwidth to respond to a text message? How do I wrestle with my unanswerable questions? How do I answer my kids' questions?</p>
-                        </div>
-                        
-                        <div class="experience-section">
-                            <h3><i class="fas fa-music"></i> Finding Comfort in Music & Meditation</h3>
-                            <p>From the initial moment of our trauma, I had to find things to comfort my soul. Sleep had a hard time finding me, and when it felt like my heart was literally being crushed under a heavy weight, the first thing I reached for was music- songs that had resonated with me from a young age. My mind could stop thinking, and my soul could connect. I do not mean this tritely when I say that music was a balm for my shrapnel wounded soul. As the months passed, and as my heart woke up, I also felt like playing the piano again, which has always been a source of stress relief for me.</p>
-                            
-                            <p>I started to meditate almost everyday. I run a hot bath and listen to a guided mediation, or just let my mind open and listen for any thoughts or feelings. This has been very calming for me, a way to let my tears flow and feel all the feelings. I have processed a lot of emotions this way, and it has been a good healing tool. Being outside in my garden has been a place for me to process my emotions as well.</p>
-                        </div>
-                        
-                        <div class="reflection-box">
-                            <h4><i class="fas fa-hands-helping"></i> The Power of Gratitude</h4>
-                            <p>One thing I did early on was do a deliberate gratitude practice. I was experiencing something I never would have chosen, but I still had so much good in my life. For example, I could feed my children and put them in a safe place each night- which many mothers cannot do around the world, and so on and so on. I let myself feel the feelings of despair- I didn't push them down, but then I would finish by remembering how good my life still was. I cannot explain how much good this has done for me. There is always something to be grateful for.</p>
-                        </div>
-                        
-                        <div class="experience-section">
-                            <h3><i class="fas fa-spa"></i> Spiritual Connections & Hope</h3>
-                            <p>I would be remiss to not mention one big thing that has comforted Dusty and I immensely. I have felt hesitant to share this— but we do believe that God has given people the spiritual gift to connect in different ways to the Spirit World. We took the opportunity to visit with a few different people, who connected with Tyson and we were able to receive such comfort from these visits. What was shared was sacred to us, and at no time did we feel that it was anything other than a gift to us from God.</p>
-                            
-                            <p>Through all of this, in my grief, I am reminded of a quote from one of my favorite authors- "happiness can be found, in the darkest of times, if one only remembers to turn on the light." All these things I have done or that have been given to me have helped me turn on the light. These moments have given me hope.</p>
-                        </div>
-                        
-                        <div class="experience-section">
-                            <h3><i class="fas fa-user"></i> Reflections by Dusty</h3>
-                            <p>At some point after gathering together with our family in the hospital room shortly after the incident, I said a prayer, that essentially said, we are hurt, our hearts are broken, and we need comfort and peace. The prayer was answered as the spirit of peace in the room was incredibly strong and overpowering. That room became a sacred place to us because of how we felt.</p>
-                            
-                            <p>We know that Tyson regrets his decision, that he loves us and wants to live with us again. This gives us hope for a reunion in the future, we know his spirit or essence lives on and he is with us.</p>
-                        </div>
-                        
-                        <div class="reflection-box">
-                            <h4><i class="fas fa-paint-brush"></i> The Kintsugi Analogy</h4>
-                            <p>A kind friend gave our family a picture that was in the style of Kintsugi. Kintsugi, meaning "golden repair" in Japanese, is an art form and philosophy that emphasizes the beauty of imperfection and the power of resilience. It involves repairing broken pottery with lacquer and gold, highlighting the cracks and fractures rather than hiding them. This practice is a reflection of the Japanese philosophy of wabi-sabi, which embraces transience and imperfection. It teaches us that even when we think we are broken, we can be put back together in a beautiful way.</p>
-                        </div>
-                        
-                        <div class="experience-section">
-                            <h3><i class="fas fa-hands"></i> Finding Strength & Forgiveness</h3>
-                            <p>I have found strength to continue on through journaling. I have written pages and pages of letters to Tyson. It has been profoundly healing.</p>
-                            
-                            <p>I believe that because of Christ, mortals can forgive those who have moved on to the next life. That is what I am working on, and I've made great progress forgiving my son, I love him, I can't wait to see him again, and even though I was profoundly hurt by his action, I am not his judge, I don't know the full circumstances of what he was going through. I just know I am commanded to release any anger or resentment, and to express forgiveness to him.</p>
-                            
-                            <p>The records of our lives will surely at some point include a story where we needed to be forgiven and times when we needed to forgive. This topic is so universal, so fundamental, foundational, and crucial to the growth of our souls. I've learned there are things that happen in life that we won't ever be able to forget. But forgetting is not a requirement of forgiving. Forgiveness has a transformative power, it's a connection to a higher power that enables you to overcome negative emotions and embrace healing and reconciliation. Forgiveness heals terrible and tragic wounds, it is made possible because of the Atonement of Jesus Christ.</p>
-                        </div>
-                        
-                        <div class="takeaway-box">
-                            <h4><i class="fas fa-lightbulb"></i> Final Thoughts</h4>
-                            <p>Even in the face of profound suffering, forgiveness, healing, and connection, can lead to a bright future. One of my big regrets is not telling Tyson how much he meant to me. Learn from me. Hug your children, children hug your parents and hold on to them as long as you need. This life is not the end of our existence, choices matter and family relationships matter even if you have a loved one that has passed on.</p>
-                            
-                            <p style="margin-top: 1rem; font-style: italic;">I came across this thought early on in my grief journey- "People speak of hope as if it is this delicate, ephemeral thing made of whispers and spiders webs. It's not. Hope has dirt on her face, blood on her knuckles, the grit of the cobblestones in her hair, and just spat out a tooth as she rises for another go."</p>
-                            
-                            <p style="margin-top: 1rem;">My grief has felt like this. Each day has been a private battle- and sometimes I end up with symbolic grit in my hair and a dirty face as I fight to keep my hope alive. My daughter Hazel, who was 7 at the time, wrote me this note soon after Tyson died- which I keep in my kitchen - "the loss of a child is hard work, but there is no need to give up." She is a wise child.</p>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 2rem;">
-                            <a href="#resources" class="hero-btn" style="display: inline-flex;">
-                                <i class="fas fa-phone-alt"></i> Get Help Now
-                            </a>
-                            
-                            <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light-teal); border-radius: 10px;">
-                                <h3 style="color: var(--primary); margin-bottom: 1rem;">Share Your Story</h3>
-                                <p>Your lived experiences can help others feel less alone and more understood. If you'd like to share your story of resilience, recovery, or loss to help others, we'd be honored to hear from you.</p>
-                                <!-- UPDATED: Changed email to info@humanresilience.us -->
-                                <a href="mailto:info@humanresilience.us?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
-                                    Do you want to share your story? Click here <i class="fas fa-paper-plane"></i>
-                                </a>
-                                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
-                                    All stories are treated with confidentiality and respect. You can choose to remain anonymous if you prefer.
-                                </p>
+                        <div class="experience-content">
+                            <div class="experience-section">
+                                <h3><i class="fas fa-heart"></i> Reflections by Jessica</h3>
+                                <p><strong>On Dec 3, 2023, the unthinkable happened in our family. On that Sunday afternoon, we discovered that our 17 year old son Tyson, had died by suicide.</strong> His heart was technically still beating at that time, but both Dusty and I felt that he passed on that day. He was life-flighted up to Billings, MT, and we spent almost the entire week there in the ICU with him and watched and waited as the organ donation team worked to keep his body sustained until matches could be made and crews could come to retrieve the gift of his organs for others.</p>
                             </div>
                             
-                            <p style="margin-top: 2rem; font-style: italic; color: var(--gray);">
-                                If you or someone you know is struggling, please reach out. Jessica and Dusty's story reminds us that help is available and recovery is possible.
-                            </p>
+                            <div class="reflection-box">
+                                <h4><i class="fas fa-heartbeat"></i> The First Nine Months</h4>
+                                <p>For the first nine months after Tyson died, I felt acute feelings of heavy grief everyday. I stopped wearing any eye makeup because it would be washed away. I felt mostly numb— shattered under the tsunami of all of the intense emotions that would arise from almost every encounter I had with life. How do I talk to my kids? How do I make dinner? How do I cope when I find Tyson's things scattered in our home? How do I smile at Tyson's friends? How do I smile at my friends? How do I muster the emotional bandwidth to respond to a text message? How do I wrestle with my unanswerable questions? How do I answer my kids' questions?</p>
+                            </div>
+                            
+                            <div class="experience-section">
+                                <h3><i class="fas fa-music"></i> Finding Comfort in Music & Meditation</h3>
+                                <p>From the initial moment of our trauma, I had to find things to comfort my soul. Sleep had a hard time finding me, and when it felt like my heart was literally being crushed under a heavy weight, the first thing I reached for was music- songs that had resonated with me from a young age. My mind could stop thinking, and my soul could connect. I do not mean this tritely when I say that music was a balm for my shrapnel wounded soul. As the months passed, and as my heart woke up, I also felt like playing the piano again, which has always been a source of stress relief for me.</p>
+                                
+                                <p>I found that the ordinary things of life were very helpful. Much like when you adjust to a new normal when you bring home a new baby, I learned to maneuver through a new normal of our family- minus one this time. The regular parts of life gave me something to do and they grounded me and gave me purpose.</p>
+                                
+                                <p>I started to meditate almost everyday. I run a hot bath and listen to a guided meditation, or just let my mind open and listen for any thoughts or feelings. This has been very calming for me, a way to let my tears flow and feel all the feelings. I have processed a lot of emotions this way, and it has been a good healing tool. Being outside in my garden has been a place for me to process my emotions as well.</p>
+                            </div>
+                            
+                            <div class="reflection-box">
+                                <h4><i class="fas fa-hands-helping"></i> Support Systems & Gratitude</h4>
+                                <p>I watched many near death experiences with Dusty and we were bolstered by people's testaments of what comes after this.</p>
+                                
+                                <p>My heart is nearly always in a state of prayer- hoping to make it through the day, hoping to receive answers, receive comfort. Usually I don't realize it's prayer, but just a call out for help.</p>
+                                
+                                <p>I have the support of my family- my sisters have called me weekly to check in on me. My parents have come often to just stay and help with the kids and let us talk.</p>
+                                
+                                <p>We have had good friends listen to our grief and then ask how they can best support us. They have shared long moments of intense conversation and bolstered our spirits. Other friends have done so many thoughtful things for me.</p>
+                                
+                                <p>One thing I did early on was do a deliberate gratitude practice. I was experiencing something I never would have chosen, but I still had so much good in my life. For example, I could feed my children and put them in a safe place each night- which many mothers cannot do around the world, and so on and so on. I let myself feel the feelings of despair- I didn't push them down, but then I would finish by remembering how good my life still was. I cannot explain how much good this has done for me. There is always something to be grateful for.</p>
+                            </div>
+                            
+                            <div class="experience-section">
+                                <h3><i class="fas fa-spa"></i> Spiritual Connections & Hope</h3>
+                                <p>I would be remiss to not mention one big thing that has comforted Dusty and I immensely. I have felt hesitant to share this— but we do believe that God has given people the spiritual gift to connect in different ways to the Spirit World. We took the opportunity to visit with a few different people, who connected with Tyson and we were able to receive such comfort from these visits. What was shared was sacred to us, and at no time did we feel that it was anything other than a gift to us from God.</p>
+                                
+                                <p>Through all of this, in my grief, I am reminded of a quote from one of my favorite authors- "happiness can be found, in the darkest of times, if one only remembers to turn on the light." All these things I have done or that have been given to me have helped me turn on the light. These moments have given me hope.</p>
+                            </div>
+                            
+                            <div class="experience-section">
+                                <h3><i class="fas fa-user"></i> Reflections by Dusty</h3>
+                                <p>At some point after gathering together with our family in the hospital room shortly after the incident, I said a prayer, that essentially said, we are hurt, our hearts are broken, and we need comfort and peace. The prayer was answered as the spirit of peace in the room was incredibly strong and overpowering. That room became a sacred place to us because of how we felt.</p>
+                                
+                                <p>We know that Tyson regrets his decision, that he loves us and wants to live with us again. This gives us hope for a reunion in the future, we know his spirit or essence lives on and he is with us.</p>
+                            </div>
+                            
+                            <div class="reflection-box">
+                                <h4><i class="fas fa-paint-brush"></i> The Kintsugi Analogy</h4>
+                                <p>A kind friend gave our family a picture that was in the style of Kintsugi. Kintsugi, meaning "golden repair" in Japanese, is an art form and philosophy that emphasizes the beauty of imperfection and the power of resilience. It involves repairing broken pottery with lacquer and gold, highlighting the cracks and fractures rather than hiding them. This practice is a reflection of the Japanese philosophy of wabi-sabi, which embraces transience and imperfection. It teaches us that even when we think we are broken, we can be put back together in a beautiful way.</p>
+                            </div>
+                            
+                            <div class="experience-section">
+                                <h3><i class="fas fa-hands"></i> Finding Strength in Many Forms</h3>
+                                <p>I have found strength to continue on through journaling. I have written pages and pages of letters to Tyson. It has been profoundly healing.</p>
+                                
+                                <p>I have found great strength in stillness.</p>
+                                
+                                <p>I have found great strength in pouring my heart out to God.</p>
+                                
+                                <p>I have found strength by going through an Emotional Resilience class and from counseling and therapy.</p>
+                                
+                                <p>I have found strength from being surrounded and served by good people.</p>
+                                
+                                <p>I have found strength from a variety of songs that have spoken to my soul.</p>
+                                
+                                <p>I have found strength from meeting with people who have beautiful spiritual gifts that enable them to receive messages from the other side.</p>
+                                
+                                <p>I have found strength from being visited by earthly angels.</p>
+                            </div>
+                            
+                            <div class="experience-section">
+                                <h3><i class="fas fa-heart-circle-check"></i> The Power of Forgiveness</h3>
+                                <p>I believe that because of Christ, mortals can forgive those who have moved on to the next life. That is what I am working on, and I've made great progress forgiving my son, I love him, I can't wait to see him again, and even though I was profoundly hurt by his action, I am not his judge, I don't know the full circumstances of what he was going through. I just know I am commanded to release any anger or resentment, and to express forgiveness to him.</p>
+                                
+                                <p>The records of our lives will surely at some point include a story where we needed to be forgiven and times when we needed to forgive. This topic is so universal, so fundamental, foundational, and crucial to the growth of our souls. I've learned there are things that happen in life that we won't ever be able to forget. But forgetting is not a requirement of forgiving. Forgiveness has a transformative power, it's a connection to a higher power that enables you to overcome negative emotions and embrace healing and reconciliation. Forgiveness heals terrible and tragic wounds, it is made possible because of the Atonement of Jesus Christ.</p>
+                            </div>
+                            
+                            <div class="takeaway-box">
+                                <h4><i class="fas fa-lightbulb"></i> Final Thoughts</h4>
+                                <p>Even in the face of profound suffering, forgiveness, healing, and connection, can lead to a bright future. One of my big regrets is not telling Tyson how much he meant to me. Learn from me. Hug your children, children hug your parents and hold on to them as long as you need. This life is not the end of our existence, choices matter and family relationships matter even if you have a loved one that has passed on.</p>
+                                
+                                <p style="margin-top: 1rem; font-style: italic;">I came across this thought early on in my grief journey- "People speak of hope as if it is this delicate, ephemeral thing made of whispers and spiders webs. It's not. Hope has dirt on her face, blood on her knuckles, the grit of the cobblestones in her hair, and just spat out a tooth as she rises for another go."</p>
+                                
+                                <p style="margin-top: 1rem;">My grief has felt like this. Each day has been a private battle- and sometimes I end up with symbolic grit in my hair and a dirty face as I fight to keep my hope alive. My daughter Hazel, who was 7 at the time, wrote me this note soon after Tyson died- which I keep in my kitchen - "the loss of a child is hard work, but there is no need to give up." She is a wise child.</p>
+                            </div>
+                            
+                            <div style="text-align: center; margin-top: 2rem;">
+                                <a href="#resources" class="hero-btn" style="display: inline-flex;">
+                                    <i class="fas fa-phone-alt"></i> Get Help Now
+                                </a>
+                                
+                                <div style="margin-top: 2rem; padding: 2rem; background-color: var(--light-teal); border-radius: 10px;">
+                                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Share Your Story</h3>
+                                    <p>Your lived experiences can help others feel less alone and more understood. If you'd like to share your story of resilience, recovery, or loss to help others, we'd be honored to hear from you.</p>
+                                    <!-- UPDATED: Changed email to info@humanresilience.us -->
+                                    <a href="mailto:info@humanresilience.us?subject=Sharing My Story&body=Hello, I would like to share my lived experience..." class="share-story-btn">
+                                        Do you want to share your story? Click here <i class="fas fa-paper-plane"></i>
+                                    </a>
+                                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
+                                        All stories are treated with confidentiality and respect. You can choose to remain anonymous if you prefer.
+                                    </p>
+                                </div>
+                                
+                                <p style="margin-top: 2rem; font-style: italic; color: var(--gray);">
+                                    If you or someone you know is struggling, please reach out. Jessica and Dusty's story reminds us that help is available and recovery is possible.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     
     <!-- Footer -->
     <footer id="contact">
